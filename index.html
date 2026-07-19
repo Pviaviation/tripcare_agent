@@ -366,12 +366,12 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 
 /* ============ S11 matrix ============ */
 .mx-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(.8rem,2vmin,1.5rem);flex:1;min-height:0;align-items:center}
-.mx-grid .klist li{font-size:var(--t-small)}
+.mx-grid .klist li{font-size:calc(var(--t-body)*1.12);line-height:1.55}
 .mx-grid svg{width:100%;max-height:58vmin}
 .mxq{fill:rgba(62,143,201,.06);stroke:var(--line)}
-.mxlab{font-size:10px;fill:var(--ink-mute);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-.mxname{font-size:11px;font-weight:700;fill:var(--ink)}
-.mxsub{font-size:9.2px;fill:var(--ink-sub)}
+.mxlab{font-size:13px;fill:var(--ink-mute);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.mxname{font-size:15px;font-weight:700;fill:var(--ink)}
+.mxsub{font-size:12px;fill:var(--ink-sub)}
 
 /* ============ S12 pillars ============ */
 .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.7vmin,1.1rem);flex:1;min-height:0;align-content:center}
@@ -815,7 +815,7 @@ body.printmode .rpath{stroke-dashoffset:0}
 <section class="slide" id="s9">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">VƯỚNG MẮC 3/3</span></div>
   <div class="eyebrow rv" style="--i:0">Khó khăn 3 · Hệ thống &amp; quy trình bán</div>
-  <h1 class="sl-title rv" style="--i:1">Mỗi kênh bán của đại lý đều có điểm nghẽn riêng</h1>
+  <h1 class="sl-title rv" style="--i:1">Mỗi kênh bán có đặc thù riêng, cần cách tiếp cận và hỗ trợ phù hợp.</h1>
   <div class="goldline gline"></div>
   <div class="tower-strip rv" style="--i:2">
     <span class="tw">💡</span>
@@ -841,44 +841,48 @@ body.printmode .rpath{stroke-dashoffset:0}
     <div class="card pillar rv" style="--i:5">
       <div class="pnum">KÊNH OFFLINE · LOTUS BOOKER</div><h3>🧑‍💼 Lotus Booker</h3>
       <ul>
-        <li><b>Mới được đẩy mạnh gần đây</b> — đã triển khai tới <b>~300–400 đại lý</b>, doanh thu vé ~<b>10 tỷ ₫/ngày</b>; mỗi đại lý có nhiều booker nên khó ước tính tổng số người bán.</li>
-        <li>Đã có các ancillary cơ bản như <b>chọn chỗ, hành lý</b> — sẵn luồng để bổ sung bảo hiểm.</li>
-        <li>Bán offline phụ thuộc tư vấn trực tiếp: booker ưu tiên bán vé, chỉ bán bảo hiểm khi khách chủ động hỏi.</li>
+        <li>Việc bán BH qua Lotus Booker sẽ áp dụng được cho các sub-agent, tuy nhiên việc bán offline phụ thuộc vào tư vấn trực tiếp của booker. Đại lý ưu tiên thủ tục tư vấn nhanh gọn nên sẽ ưu tiên thời gian bán vé. Với Bảo hiểm, booker phải tư vấn thủ công nhiều hơn và hỗ trợ sau bán, nên booker chỉ bán BH khi khách chủ động hỏi.</li>
+        <li>Hiện đã triển khai tới <b>~300–400 đại lý</b>, doanh thu vé ~<b>10 tỷ ₫/ngày</b>; mỗi đại lý có nhiều booker nên khó ước tính tổng số người bán.</li>
+        <li>Đã có các ancillary cơ bản như <b>chọn chỗ, hành lý</b>, và sắp tới sẽ bổ sung thêm bảo hiểm.</li>
       </ul>
     </div>
   </div>
 </section>
 <!-- NOTES S9: Đối chiếu với web/app để thấy vì sao đại lý khó bán: thiếu cả 4 yếu tố (khách chưa chốt hãng, không có opt-out, phải tư vấn thủ công, phí tách riêng). Ba kênh: API Hub — IT VNA đang test, xong sẽ chuyển PVI test Premium & Coverage, nhưng đại lý muốn sản phẩm đa hãng; TAP — không phủ tới sub-agent; Lotus Booker — điểm sáng về độ phủ (~300-400 đại lý, vé ~10 tỷ ₫/ngày, đã có ancillary chọn chỗ/hành lý) nhưng bán bảo hiểm vẫn phụ thuộc tư vấn thủ công của booker. -->
 
-<!-- ================= SLIDE 10 — NỖ LỰC ĐÃ TRIỂN KHAI ================= -->
+<!-- ================= SLIDE 10 — ĐÁNH GIÁ HIỆU QUẢ ================= -->
 <section class="slide" id="s10">
-  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">NỖ LỰC ĐÃ TRIỂN KHAI</span></div>
-  <div class="eyebrow rv" style="--i:0">PVI &amp; VNA đã chủ động triển khai</div>
-  <h1 class="sl-title rv" style="--i:1">Nhiều nỗ lực đã thực hiện — kết quả vẫn còn hạn chế</h1>
+  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐÁNH GIÁ HIỆU QUẢ</span></div>
+  <h1 class="sl-title rv" style="--i:1">Đánh giá hiệu quả các giải pháp thúc đẩy bán do PVI và VNA phối hợp triển khai</h1>
   <div class="goldline gline"></div>
   <div class="route-grid">
     <div class="card rv" style="--i:2">
-      <h3>🎯 Chương trình thúc đẩy bán hàng <span class="badge gold" style="margin-left:.3rem">liên tục</span></h3>
+      <h3>🎯 Thúc đẩy bán hàng</h3>
       <ul class="klist" style="margin-top:.4rem">
-        <li>Duy trì <b>thưởng 10% cho booker</b> (TripCARE Star Awards) xuyên suốt.</li>
-        <li>Chạy riêng chương trình <b>"Chào hè TripCARE — Booker Rewards"</b> (10/05 – 10/06/2026): thưởng nóng <b>20.000₫/đơn nội địa · 40.000₫/đơn quốc tế</b>, thưởng mốc tuần tới <b>1,5 triệu ₫</b>, mốc tháng tới <b>8 triệu ₫</b>.</li>
-        <li>Kết quả: booker vẫn chủ yếu chỉ bán TripCARE <b>khi khách chủ động hỏi</b>.</li>
+        <li>Duy trì cơ chế <b>thưởng 10% cho booker</b> thông qua chương trình TripCARE Star Awards.</li>
+        <li>Triển khai chương trình <b>"Chào hè TripCARE – Booker Rewards"</b> trong giai đoạn <b>tháng 4–6/2026</b>, gồm:
+          <ul style="list-style:none;margin-top:.3rem;display:flex;flex-direction:column;gap:.25rem">
+            <li style="padding-left:.6rem;position:static">– Thưởng nóng <b>20.000 đồng/đơn nội địa</b> và <b>40.000 đồng/đơn quốc tế</b>;</li>
+            <li style="padding-left:.6rem;position:static">– Thưởng theo kết quả tuần lên tới <b>1,5 triệu đồng</b> và theo tháng lên tới <b>8 triệu đồng</b>.</li>
+          </ul>
+        </li>
+        <li>Tuy nhiên, TripCARE vẫn chủ yếu được giới thiệu <b>khi khách hàng chủ động hỏi</b>, chưa trở thành nội dung tư vấn thường xuyên trong quá trình bán vé.</li>
       </ul>
     </div>
     <div class="card rv" style="--i:3">
-      <h3>🤝 Phát triển mạng lưới &amp; đào tạo</h3>
+      <h3>🤝 Mở rộng đại lý và đào tạo</h3>
       <ul class="klist" style="margin-top:.4rem">
-        <li>Trực tiếp đến <b>trao đổi, làm việc với nhiều đại lý miền Bắc</b>.</li>
-        <li>Tổ chức <b>đào tạo</b> và hỗ trợ nhân viên đại lý thi <b>chứng chỉ đại lý bảo hiểm</b> — tỷ lệ đạt còn thấp.</li>
-        <li>Đại lý <b>Việt An</b> đã đồng ý ký kết nhưng sau đó rút lại; một số đại lý đã ký phản ánh <b>khó bán</b>.</li>
+        <li>PVI-VNA đã <b>trực tiếp làm việc</b> với nhiều đại lý tại khu vực miền Bắc để giới thiệu sản phẩm và trao đổi phương án triển khai.</li>
+        <li>Tổ chức đào tạo và tài trợ cho nhân viên đại lý tham gia thi <b>chứng chỉ đại lý bảo hiểm</b>; tuy nhiên <b>tỷ lệ đỗ không cao</b>.</li>
+        <li>Một số đại lý chưa tiếp tục triển khai sau giai đoạn trao đổi ban đầu; các đại lý đã ký kết cũng phản ánh <b>hiệu quả bán hàng chưa cao</b>.</li>
       </ul>
     </div>
   </div>
   <div class="mix-msg rv" style="--i:4">
-    Các nỗ lực bán hàng đơn lẻ <b>chưa tạo được chuyển biến</b> — khó khăn nằm ở tầng <b>sản phẩm, hoa hồng và hệ thống</b>, cần được xử lý đồng bộ theo định hướng ở phần tiếp theo.
+    Các hoạt động thúc đẩy bán hàng đã được triển khai trên nhiều phương diện nhưng <b>chưa tạo ra cải thiện rõ rệt</b>. Những vướng mắc cốt lõi tập trung ở ba nhóm: <b>sản phẩm, cơ chế hoa hồng và quy trình bán trên hệ thống</b>.
   </div>
 </section>
-<!-- NOTES S10: Slide phòng ngừa câu hỏi "hai bên đã làm gì chưa?". Đã làm cả hai hướng: (1) incentive — thưởng 10% thường xuyên + campaign Chào hè T5-6/2026 với thưởng nóng theo đơn và mốc tuần/tháng; (2) mạng lưới — gặp trực tiếp đại lý miền Bắc, đào tạo, thi chứng chỉ (ít người đạt), Việt An đồng ý rồi rút, đại lý đã ký vẫn kêu khó bán. Kết luận: vấn đề không nằm ở nỗ lực bán hàng mà ở cấu trúc — dẫn sang slide định hướng. -->
+<!-- NOTES S10: Slide đánh giá hiệu quả các giải pháp PVI và VNA đã phối hợp triển khai. Hai hướng: (1) thúc đẩy bán — thưởng 10% thường xuyên + campaign Chào hè T4-6/2026; (2) mở rộng đại lý & đào tạo — làm việc trực tiếp miền Bắc, thi chứng chỉ (tỷ lệ hạn chế). Kết luận: vướng mắc cốt lõi ở sản phẩm, hoa hồng và quy trình bán. -->
 
 <!-- ================= SLIDE 11 — SẢN PHẨM KỲ VỌNG ================= -->
 <section class="slide" id="s11">
@@ -914,7 +918,7 @@ body.printmode .rpath{stroke-dashoffset:0}
       </svg>
     </div>
     <ul class="klist rv" style="--i:3">
-      <li><b>Phí thấp hơn, quyền lợi cơ bản</b> — tập trung các quyền lợi khách thực sự cần như trễ chuyến bay, dễ tư vấn trong 30 giây.</li>
+      <li><b>Phí thấp hơn, quyền lợi cơ bản</b> — tập trung các quyền lợi khách thực sự cần như trễ chuyến bay, dễ tư vấn.</li>
       <li>Áp dụng cho cả <b>một chiều, khứ hồi và đa chặng</b>, tính phí theo <b>điểm đi – điểm đến</b>.</li>
       <li><b>Thao tác cấp đơn nhanh</b>, phù hợp luồng bán vé của booker và cấp đơn theo đoàn.</li>
       <li>Khảo sát nhu cầu đại lý trước khi thiết kế, đánh giá phạm vi áp dụng phù hợp.</li>
@@ -927,22 +931,19 @@ body.printmode .rpath{stroke-dashoffset:0}
 <section class="slide" id="s12">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐỊNH HƯỚNG</span></div>
   <div class="eyebrow rv" style="--i:0">Định hướng xử lý</div>
-  <h1 class="sl-title rv" style="--i:1">Bốn trụ hành động phối hợp VNA – CNVN – PVI</h1>
+  <h1 class="sl-title rv" style="--i:1">Giải pháp phối hợp giữa VNA – PVI</h1>
   <div class="goldline gline"></div>
-  <div class="tower-strip rv" style="--i:2">
-    <span class="tw">🗼</span>
-    <p><b>Nguyên tắc điều phối:</b> mỗi trụ có đầu mối và kết quả kiểm chứng được theo tháng; ưu tiên các việc booker cảm nhận được ngay trong thao tác bán hằng ngày.</p>
-  </div>
+
   <div class="pillar-grid">
     <div class="card pillar rv" style="--i:3">
-      <div class="pnum">TRỤ 01</div><h3>Kênh bán</h3>
+      <div class="pnum">01</div><h3>Kênh bán</h3>
       <ul>
         <li>Duy trì TAP / Lotus Booker để mở rộng độ phủ điểm bán</li>
         <li>Đánh giá API Hub cho đại lý lớn, OTA, mô hình B2B / B2B2C</li>
       </ul>
     </div>
     <div class="card pillar rv" style="--i:4">
-      <div class="pnum">TRỤ 02</div><h3>Công cụ bán</h3>
+      <div class="pnum">02</div><h3>Công cụ bán</h3>
       <ul>
         <li>Sales script ngắn cho booker</li>
         <li>Tài liệu tra cứu nhanh quyền lợi – phí</li>
@@ -950,14 +951,14 @@ body.printmode .rpath{stroke-dashoffset:0}
       </ul>
     </div>
     <div class="card pillar rv" style="--i:5">
-      <div class="pnum">TRỤ 03</div><h3>Động lực bán</h3>
+      <div class="pnum">03</div><h3>Động lực bán</h3>
       <ul>
         <li>Cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý</li>
         <li>Chương trình thi đua / top seller theo kỳ ngắn</li>
       </ul>
     </div>
     <div class="card pillar rv" style="--i:6">
-      <div class="pnum">TRỤ 04</div><h3>Sản phẩm</h3>
+      <div class="pnum">04</div><h3>Sản phẩm</h3>
       <ul>
         <li>Khảo sát TripCARE Lite / Essential</li>
         <li>Phí thấp hơn, quyền lợi cơ bản, dễ tư vấn</li>
@@ -977,7 +978,7 @@ body.printmode .rpath{stroke-dashoffset:0}
   <div class="body-wrap">
     <div class="dec-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="dec rv" style="--i:2"><div class="dnum">01</div><p><b>Khảo sát đại lý về sản phẩm TripCARE Lite</b> — nhu cầu thực tế, mức phí và phạm vi hành trình mong muốn.</p></div>
-      <div class="dec rv" style="--i:3"><div class="dnum">02</div><p><b>Khảo sát cơ chế tăng thêm hoa hồng</b> — mức hỗ trợ nào đủ tạo động lực cho đại lý/booker; nguyên tắc đưa vào Hợp đồng đại lý.</p></div>
+      <div class="dec rv" style="--i:3"><div class="dnum">02</div><p><b>Khảo sát cơ chế tăng thêm hoa hồng</b> — mức hỗ trợ phù hợp tạo động lực cho đại lý/booker; nguyên tắc đưa vào Hợp đồng đại lý.</p></div>
       <div class="dec rv" style="--i:4"><div class="dnum">03</div><p><b>Đẩy nhanh tiến độ Lotus Booker / API Hub</b> — mở rộng độ phủ đại lý; hoàn tất test API (IT VNA → PVI test Premium &amp; Coverage).</p></div>
     </div>
     <div class="endquote rv" style="--i:7">
