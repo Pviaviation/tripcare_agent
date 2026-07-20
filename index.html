@@ -261,13 +261,13 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .tl-band{grid-row:2;grid-column:1/-1;position:relative;height:56px}
 .tl-track{position:absolute;left:0;right:0;top:50%;height:4px;transform:translateY(-50%);border-radius:2px;
   background:repeating-linear-gradient(90deg,#C99A33 0 18px,transparent 18px 34px);opacity:.7;
-  clip-path:inset(0 100% 0 0);transition:clip-path 1.8s var(--ease) .3s}
+  clip-path:inset(0 100% 0 0);transition:clip-path 4.2s var(--ease) .3s}
 .on .tl-track{clip-path:inset(0 0 0 0)}
 .tl-dots{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr)}
 .tl-dots i{place-self:center;width:20px;height:20px;border-radius:50%;background:#fff;
   border:3px solid var(--gold-bright);animation:tlpulse 3.2s infinite}
 @keyframes tlpulse{0%{box-shadow:0 0 0 0 rgba(200,154,51,.45)}70%{box-shadow:0 0 0 12px rgba(200,154,51,0)}100%{box-shadow:0 0 0 0 rgba(200,154,51,0)}}
-.tl-plane{position:absolute;top:50%;left:0;transform:translate(-50%,-56%);font-size:1.8rem;transition:left 2.6s var(--ease) .4s}
+.tl-plane{position:absolute;top:50%;left:0;transform:translate(-50%,-56%);font-size:1.8rem;transition:left 5.5s var(--ease) .4s}
 .on .tl-plane{left:97.5%}
 .tl-hint{text-align:center;font-size:.9rem;color:var(--ink-mute);margin-top:.6rem}
 /* persona 2x2 (S7) */
@@ -292,6 +292,22 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 #s7 .pcard .pneed{font-size:calc(var(--t-small)*1.08)}
 #s7 .pfit{font-size:.8rem}
 #s7 .pcard .pav{width:46px;height:46px;font-size:1.4rem}
+
+/* ============ S7B gap diagram ============ */
+.gap-diagram { display: flex; align-items: stretch; gap: 1.5rem; margin-top: clamp(.8rem, 2vmin, 1.5rem); flex: 1; min-height: 0; }
+.gap-col { flex: 1; background: #fff; border-radius: 16px; border: 1px solid var(--line); padding: clamp(1rem, 2.5vmin, 1.5rem); box-shadow: 0 4px 14px rgba(16,42,80,.05); display: flex; flex-direction: column; }
+.gap-col.tripcare { border-top: 5px solid var(--s-blue); background: linear-gradient(180deg, #fff, var(--sky-50)); }
+.gap-col.customer { border-top: 5px solid var(--s-gold); background: linear-gradient(180deg, #fff, rgba(200,154,51,.05)); }
+.gap-header { font-family: var(--font-d); font-size: 1.25rem; font-weight: 800; text-align: center; margin-bottom: 1.2rem; }
+.gap-tripcare .gap-header { color: var(--s-blue); }
+.gap-customer .gap-header { color: var(--gold); }
+.gap-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; flex: 1; }
+.gap-item { display: flex; align-items: center; gap: .8rem; background: rgba(255,255,255,.6); padding: .85rem 1.1rem; border-radius: 12px; border: 1px solid var(--line); font-size: calc(var(--t-small) * 1.05); color: var(--ink-sub); line-height: 1.45; box-shadow: 0 2px 6px rgba(16,42,80,.02); flex: 1; }
+.gap-item b { display: block; font-size: calc(var(--t-body) * 1.05); color: var(--ink); margin-bottom: .2rem; }
+.gap-item i { font-size: 1.8rem; flex: 0 0 auto; font-style: normal; }
+.gap-divider { display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; width: 80px; }
+.gap-line { position: absolute; top: 5%; bottom: 5%; left: 50%; width: 2px; background: dashed 2px var(--gold); opacity: .5; z-index: 0; }
+.gap-badge { position: relative; background: var(--bad); color: #fff; font-family: var(--font-d); font-weight: 800; font-size: 1.2rem; padding: .6rem 1.2rem; border-radius: 20px; z-index: 1; box-shadow: 0 6px 14px rgba(210,90,75,.25); letter-spacing: .05em; }
 
 /* ============ S6 heatmap (không còn dùng) ============ */
 .hm{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:7px;flex:1;min-height:0;align-content:center}
@@ -332,6 +348,76 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,2vmin,1.4rem);flex:1;min-height:0}
 .route-grid .card{display:flex;flex-direction:column}
 .route-grid svg{flex:1;min-height:0;width:100%}
+/* S10 — text trái + poster minh họa phải */
+.s10-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(.8rem,2vmin,1.4rem);flex:1;min-height:0}
+.s10-left{display:flex;flex-direction:column;gap:clamp(.7rem,1.6vmin,1.1rem);min-height:0}
+.s10-left .card{flex:1;min-height:0}
+.s10-poster{margin:0;display:flex;flex-direction:column;min-height:0;background:#fff;border:1px solid rgba(15,40,80,.10);border-radius:16px;padding:.5rem .5rem .45rem;box-shadow:0 12px 30px rgba(10,30,60,.14)}
+.s10-poster a{display:contents}
+.s10-poster img{flex:1;min-height:0;width:auto;max-width:min(28vw,400px);object-fit:contain;border-radius:10px;cursor:zoom-in}
+.s10-poster figcaption{text-align:center;font-size:var(--t-small);color:var(--ink-sub);padding-top:.4rem;max-width:min(28vw,400px)}
+.s10-poster figcaption b{color:var(--ink)}
+/* S10 redesign — panels có header band màu, stat chips, insight banner */
+.s10-left{justify-content:space-between;gap:clamp(.5rem,1.2vmin,.85rem)}
+.s10-panel{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 6px 20px rgba(16,42,80,.07);display:flex;flex-direction:column;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.s10-panel:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(16,42,80,.14)}
+.s10-head{display:flex;align-items:center;gap:.7rem;padding:.55rem .8rem;
+  background:var(--ct);border-bottom:2px solid var(--cb);position:relative}
+.s10-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.s10-ic{flex:none;width:2.5rem;height:2.5rem;border-radius:12px;display:grid;place-items:center;
+  font-size:1.32rem;background:var(--c);box-shadow:0 4px 12px rgba(16,42,80,.2)}
+.s10-htxt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.12}
+.s10-kicker{font-family:var(--font-d);font-weight:700;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.s10-head h3{font-family:var(--font-d);font-weight:800;font-size:calc(var(--t-body)*1.06);color:var(--ink);margin:0}
+.s10-tag{flex:none;font-family:var(--font-d);font-weight:700;font-size:.6rem;letter-spacing:.1em;
+  padding:.28rem .62rem;border-radius:999px;background:var(--c);color:#fff;white-space:nowrap}
+.s10-body{padding:.55rem .85rem .62rem;display:flex;flex-direction:column;gap:.44rem}
+.s10-lead{font-size:var(--t-small);color:var(--ink-sub);line-height:1.46}
+.s10-lead b{color:var(--ink)}
+.s10-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.s10-chip{flex:1 1 0;min-width:8rem;border:1px solid var(--line);border-radius:12px;padding:.45rem .62rem;
+  background:linear-gradient(160deg,#fff,var(--gold-soft));transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.s10-chip:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(16,42,80,.1)}
+.s10-chip .cv{font-family:var(--font-d);font-weight:800;font-size:calc(var(--t-body)*1.1);color:var(--gold);line-height:1}
+.s10-chip .cl{font-size:calc(var(--t-small)*.8);color:var(--ink-sub);margin-top:.16rem;line-height:1.22}
+.s10-rows{display:flex;flex-direction:column;gap:.42rem}
+.s10-irow{display:flex;gap:.55rem;align-items:flex-start;font-size:var(--t-small);color:var(--ink-sub);line-height:1.42}
+.s10-irow .ri{flex:none;width:1.7rem;height:1.7rem;border-radius:9px;display:grid;place-items:center;font-size:.9rem;
+  background:var(--ct);border:1px solid var(--cb)}
+.s10-irow b{color:var(--ink)}
+.s10-note{display:flex;gap:.42rem;align-items:flex-start;font-size:calc(var(--t-small)*.92);line-height:1.38;
+  color:#8A3F34;background:rgba(210,90,75,.09);border:1px solid rgba(210,90,75,.24);border-radius:10px;padding:.44rem .6rem}
+.s10-note .ni{flex:none}
+.s10-insight{display:flex;gap:.65rem;align-items:center;border-radius:14px;padding:.68rem 1rem;
+  background:linear-gradient(120deg,rgba(200,154,51,.16),rgba(62,143,201,.1));
+  border:1px solid rgba(200,154,51,.32);box-shadow:0 5px 16px rgba(16,42,80,.06)}
+.s10-insight .bi{flex:none;font-size:1.42rem}
+.s10-insight p{font-size:var(--t-small);color:var(--ink-sub);line-height:1.44;margin:0}
+.s10-insight p b{color:var(--ink)}
+.s10-pills{display:inline-flex;gap:.32rem;flex-wrap:wrap;vertical-align:middle}
+.s10-pill{font-family:var(--font-d);font-weight:700;font-size:calc(var(--t-small)*.82);padding:.16rem .55rem;border-radius:999px;
+  background:#fff;border:1px solid var(--cb,var(--line));color:var(--ink)}
+.s10-pill:nth-child(1){border-color:rgba(184,135,42,.5)}
+.s10-pill:nth-child(2){border-color:rgba(62,143,201,.5)}
+.s10-pill:nth-child(3){border-color:rgba(42,160,137,.5)}
+/* S8 — bảng cơ cấu chi trả */
+.comm-wrap{overflow-x:auto}
+.comm-tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:.55rem;min-width:560px}
+.comm-tbl th,.comm-tbl td{padding:.5rem .85rem;text-align:center;border-bottom:1px solid rgba(16,41,79,.10)}
+.comm-tbl thead th{font-family:var(--font-d);font-weight:700;font-size:var(--t-small);color:var(--ink);letter-spacing:.03em}
+.comm-tbl thead .grp-vna{background:rgba(62,143,201,.16);border-radius:10px 10px 0 0}
+.comm-tbl thead .grp-agy{background:rgba(184,135,42,.16);border-radius:10px 10px 0 0}
+.comm-tbl thead .sub{font-weight:600;font-size:calc(var(--t-small)*.92);color:var(--ink-sub);background:rgba(16,41,79,.04)}
+.comm-tbl tbody td:first-child,.comm-tbl thead tr:first-child th:first-child{text-align:left}
+.comm-tbl td:first-child{color:var(--ink-sub);font-size:var(--t-small);line-height:1.4}
+.comm-tbl td:first-child b{color:var(--ink)}
+.comm-tbl .pc{font-family:var(--font-d);font-weight:800;font-size:calc(var(--t-body)*1.22);color:var(--ink)}
+.comm-tbl .pc.hl{color:var(--s-gold)}
+.comm-tbl .na{color:var(--ink-mute);font-size:calc(var(--t-small)*.9)}
+.comm-note{margin-top:.55rem;font-size:var(--t-small);color:var(--ink-sub)}
+.comm-note b{color:var(--ink)}
 .rt-tag{align-self:flex-start;margin-bottom:.3rem}
 .route-pts{margin-top:.6rem}
 .route-pts li{font-size:var(--t-small)}
@@ -386,9 +472,16 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .hs-card li{font-size:calc(var(--t-small)*1.06);color:var(--ink-sub);line-height:1.52;padding-left:1rem;position:relative}
 .hs-card li::before{content:"✕";position:absolute;left:0;top:.24em;color:var(--bad);font-size:.7em;font-weight:800}
 .hs-card li b{color:var(--ink)}
+/* ảnh chụp minh hoạ trong card lịch sử (S10B) */
+.hs-shot{align-self:center;margin:.1rem 0 .25rem;border-radius:10px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 6px 16px rgba(16,42,80,.16);background:#fff;cursor:zoom-in;line-height:0;position:relative;flex:none}
+.hs-shot img{display:block;max-height:25vh;width:auto;max-width:100%}
+.hs-shot .shot-tag{position:absolute;left:0;bottom:0;right:0;line-height:1.25;background:linear-gradient(transparent,rgba(10,26,52,.82));
+  color:#fff;font-size:calc(var(--t-small)*.82);font-weight:600;padding:.5rem .55rem .3rem;text-align:left}
+.hs-shotcap{font-size:calc(var(--t-small)*.86);color:var(--ink-mute);text-align:center;margin:-.05rem 0 .15rem}
 
 /* ============ S12 pillars ============ */
-.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.7vmin,1.1rem);flex:1;min-height:0;align-content:center}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.7vmin,1.1rem)}
 .pillar{display:flex;flex-direction:column;gap:.5rem;border-top:4px solid var(--gold-bright);position:relative;overflow:hidden}
 .pillar .pnum{font-family:var(--font-d);font-weight:800;font-size:.76rem;letter-spacing:.22em;color:var(--gold)}
 .pillar h3{font-size:calc(var(--t-body)*1.06)}
@@ -413,6 +506,13 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .endquote p{font-family:var(--font-d);font-size:clamp(1.02rem,2.6vmin,1.45rem);font-weight:600;line-height:1.5;color:var(--ink)}
 .endquote p b{color:var(--gold)}
 
+/* ============ divider slides ============ */
+.slide-divider { justify-content: center; padding-left: 10vw; background-image: radial-gradient(circle at 100% 0%, rgba(62,143,201,.1) 0%, transparent 50%), linear-gradient(160deg, #F5FAFF, #D8EAF9); }
+.slide-divider::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(62,143,201,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(62,143,201,.05) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+.sd-part { font-family: var(--font-d); font-size: 0.95rem; font-weight: 800; color: #0078D7; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.sd-num { font-family: var(--font-d); font-size: clamp(4rem, 10vmin, 5.5rem); font-weight: 800; line-height: 0.85; background: linear-gradient(180deg, #10294F, #0078D7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding-bottom: 1rem; }
+.sd-title { font-family: var(--font-d); font-size: clamp(1.8rem, 4vmin, 2.4rem); font-weight: 800; color: #10294F; border-top: 4px solid var(--gold); padding-top: 1.2rem; display: inline-block; max-width: 800px; line-height: 1.3; }
+
 /* ============ print mode (?print=true) ============ */
 body.printmode{overflow:auto;height:auto}
 body.printmode #deck{position:static}
@@ -431,7 +531,9 @@ body.printmode .rpath{stroke-dashoffset:0}
 }
 @media (max-width:900px){
   .obj-grid,.kpi-grid,.persona-grid,.pillar-grid,.dec-grid{grid-template-columns:1fr 1fr}
-  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols{grid-template-columns:1fr}
+  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols,.s10-wrap{grid-template-columns:1fr}
+  .s10-poster img{flex:none;width:100%;max-width:100%;height:auto}
+  .s10-poster figcaption{max-width:100%}
 }
 </style>
 </head>
@@ -511,7 +613,7 @@ body.printmode .rpath{stroke-dashoffset:0}
     <div class="obj-grid" style="grid-template-columns:repeat(4,1fr)">
       <div class="card rv" style="--i:1" onclick="goId('s4')">
         <div class="obj-top"><span class="onum">PHẦN 01</span><span class="oic">🛫</span></div>
-        <h3>Cập nhật hiện trạng</h3>
+        <h3>Báo cáo kinh doanh</h3>
         <p class="odesc">Kết quả ký kết, đào tạo và số liệu bán đến 20/07/2026.</p>
         <div class="ofoot">Slide 3–4 <span>→</span></div>
       </div>
@@ -522,7 +624,7 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="ofoot">Slide 5–8 <span>→</span></div>
       </div>
       <div class="card rv" style="--i:3" onclick="goId('s10')">
-        <div class="obj-top"><span class="onum">PHẦN 03</span><span class="oic">📉</span></div>
+        <div class="obj-top"><span class="onum">PHẦN 03</span><span class="oic">📊</span></div>
         <h3>Đánh giá hoạt động đã triển khai</h3>
         <p class="odesc">Hiệu quả các nỗ lực PVI–VNA đã phối hợp qua từng giai đoạn.</p>
         <div class="ofoot">Slide 9–11 <span>→</span></div>
@@ -579,10 +681,19 @@ body.printmode .rpath{stroke-dashoffset:0}
 
 
 
+<!-- ================= DIVIDER 1 ================= -->
+<section class="slide slide-divider" id="div1">
+  <div class="rv" style="--i:0">
+    <div class="sd-part">PHẦN 01</div>
+    <div class="sd-num">01</div>
+    <div class="sd-title">Báo cáo kinh doanh</div>
+  </div>
+</section>
+
 <!-- ================= SLIDE 4 — CẬP NHẬT TRIỂN KHAI ================= -->
 <section class="slide" id="s4">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HIỆN TRẠNG</span></div>
-  <div class="eyebrow rv" style="--i:0">Tiến độ đến thời điểm báo cáo</div>
+  <div class="eyebrow rv" style="--i:0">BÁO CÁO KINH DOANH</div>
   <h1 class="sl-title rv" style="--i:1">Cập nhật triển khai trên Kênh Đại lý</h1>
   <div class="goldline gline"></div>
   <div class="s4-layout">
@@ -596,14 +707,14 @@ body.printmode .rpath{stroke-dashoffset:0}
 
         <!-- Connecting lines from center to nodes -->
         <g stroke="var(--line)" stroke-width="1" stroke-dasharray="3 4" opacity=".6">
-          <line x1="200" y1="130" x2="200" y2="10"/>
-          <line x1="260" y1="155" x2="380" y2="40"/>
-          <line x1="280" y1="210" x2="440" y2="185"/>
-          <line x1="260" y1="270" x2="400" y2="360"/>
-          <line x1="220" y1="290" x2="270" y2="440"/>
-          <line x1="170" y1="285" x2="100" y2="430"/>
-          <line x1="125" y1="250" x2="-10" y2="310"/>
-          <line x1="125" y1="180" x2="-20" y2="135"/>
+          <line x1="200" y1="110" x2="200" y2="75"/>
+          <line x1="271" y1="139" x2="295" y2="115"/>
+          <line x1="300" y1="210" x2="335" y2="210"/>
+          <line x1="271" y1="281" x2="295" y2="305"/>
+          <line x1="200" y1="310" x2="200" y2="345"/>
+          <line x1="129" y1="281" x2="105" y2="305"/>
+          <line x1="100" y1="210" x2="65" y2="210"/>
+          <line x1="129" y1="139" x2="105" y2="115"/>
         </g>
 
         <!-- Center hub -->
@@ -613,64 +724,59 @@ body.printmode .rpath{stroke-dashoffset:0}
         <text x="200" y="256" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="600" font-size="20" fill="var(--ink-sub)">ĐÃ KÝ</text>
 
         <!-- Orbiting nodes — 8 đại lý (teal = mới, gold = trước đó) -->
-        <!-- 1. F.C. Việt Nam — HCM -->
+        <!-- 1. F.C. Việt Nam — 0 deg -->
         <g class="s4-node">
-          <circle cx="200" cy="-18" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="200" y="-25" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">F.C.</text>
-          <text x="200" y="0" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Việt Nam</text>
+          <circle cx="200" cy="15" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="200" y="8" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">F.C.</text>
+          <text x="200" y="32" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Việt Nam</text>
         </g>
-        <!-- 2. Sông Sáng — HCM -->
+        <!-- 2. Sông Sáng — 45 deg -->
         <g class="s4-node">
-          <circle cx="405" cy="25" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="405" y="18" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Sông</text>
-          <text x="405" y="42" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Sáng</text>
+          <circle cx="338" cy="72" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="338" y="65" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Sông</text>
+          <text x="338" y="89" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Sáng</text>
         </g>
-        <!-- 3. Hồ Phi Long — HCM -->
+        <!-- 3. Hồ Phi Long — 90 deg -->
         <g class="s4-node">
-          <circle cx="455" cy="185" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="455" y="178" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Hồ Phi</text>
-          <text x="455" y="202" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Long</text>
+          <circle cx="395" cy="210" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="395" y="203" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Hồ Phi</text>
+          <text x="395" y="227" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Long</text>
         </g>
-        <!-- 4. Trung Thiên — HCM -->
+        <!-- 4. Trung Thiên — 135 deg -->
         <g class="s4-node">
-          <circle cx="415" cy="370" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="415" y="363" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Trung</text>
-          <text x="415" y="387" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Thiên</text>
+          <circle cx="338" cy="348" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="338" y="341" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Trung</text>
+          <text x="338" y="365" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Thiên</text>
         </g>
-        <!-- 5. Thăng Long — HCM -->
+        <!-- 5. Thăng Long — 180 deg -->
         <g class="s4-node">
-          <circle cx="280" cy="460" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="280" y="453" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Thăng</text>
-          <text x="280" y="477" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Long</text>
+          <circle cx="200" cy="405" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="200" y="398" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Thăng</text>
+          <text x="200" y="422" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="19" fill="var(--s-gold)">Long</text>
         </g>
-        <!-- 6. P.N.R — HCM -->
+        <!-- 6. P.N.R — 225 deg -->
         <g class="s4-node">
-          <circle cx="90" cy="450" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
-          <text x="90" y="457" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="22" fill="var(--s-gold)">P.N.R</text>
+          <circle cx="62" cy="348" r="60" fill="#fff" stroke="var(--s-gold)" stroke-width="2.5"/>
+          <text x="62" y="355" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="22" fill="var(--s-gold)">P.N.R</text>
         </g>
-        <!-- 7. Bảo Gia Trần — HN (MỚI) -->
+        <!-- 7. Bảo Gia Trần — 270 deg -->
         <g class="s4-node">
-          <circle cx="-25" cy="320" r="60" fill="#fff" stroke="var(--s-teal)" stroke-width="2.5"/>
-          <text x="-25" y="313" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="18" fill="var(--s-teal)">Bảo Gia</text>
-          <text x="-25" y="337" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="18" fill="var(--s-teal)">Trần</text>
+          <circle cx="5" cy="210" r="60" fill="#fff" stroke="var(--s-teal)" stroke-width="2.5"/>
+          <text x="5" y="203" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="18" fill="var(--s-teal)">Bảo Gia</text>
+          <text x="5" y="227" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="18" fill="var(--s-teal)">Trần</text>
         </g>
-        <!-- 8. Én Việt — HN (MỚI) -->
+        <!-- 8. Én Việt — 315 deg -->
         <g class="s4-node">
-          <circle cx="-35" cy="135" r="60" fill="#fff" stroke="var(--s-teal)" stroke-width="2.5"/>
-          <text x="-35" y="142" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="20" fill="var(--s-teal)">Én Việt</text>
+          <circle cx="62" cy="72" r="60" fill="#fff" stroke="var(--s-teal)" stroke-width="2.5"/>
+          <text x="62" y="79" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="20" fill="var(--s-teal)">Én Việt</text>
         </g>
 
         <!-- "MỚI" + "HN" badges for new Hanoi agents -->
-        <rect x="16" y="293" width="48" height="24" rx="12" fill="var(--s-teal)"/>
-        <text x="40" y="310" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="13" fill="#fff">MỚI</text>
-        <rect x="14" y="103" width="48" height="24" rx="12" fill="var(--s-teal)"/>
-        <text x="38" y="120" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="13" fill="#fff">MỚI</text>
+        <rect x="30" y="175" width="48" height="24" rx="12" fill="var(--s-teal)"/>
+        <text x="54" y="192" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="13" fill="#fff">MỚI</text>
+        <rect x="87" y="37" width="48" height="24" rx="12" fill="var(--s-teal)"/>
+        <text x="111" y="54" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="13" fill="#fff">MỚI</text>
 
-        <!-- Region labels -->
-        <rect x="-65" y="78" width="36" height="22" rx="11" fill="rgba(62,143,201,.15)"/>
-        <text x="-47" y="94" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="12" fill="var(--s-blue)">HN</text>
-        <rect x="-60" y="268" width="36" height="22" rx="11" fill="rgba(62,143,201,.15)"/>
-        <text x="-42" y="284" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-weight="700" font-size="12" fill="var(--s-blue)">HN</text>
 
         <!-- Animated pulse on center -->
         <circle cx="200" cy="210" r="90" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity=".6">
@@ -686,7 +792,7 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="s4-card-icon" style="background:linear-gradient(135deg,rgba(200,154,51,.15),rgba(200,154,51,.05))">📝</div>
         <div class="s4-card-body">
           <div class="kpi-lab">Ký kết hợp tác</div>
-          <div class="kpi-top"><div class="num" data-count="8">0</div><span class="badge gold">đại lý đã ký</span></div>
+          <div class="kpi-top"><div class="num" data-count="8">0</div><span style="font-weight:600;color:var(--gold);font-size:1.4rem">đại lý đã ký</span></div>
           <p class="kpi-sub"><b>02 đại lý</b> tại Hà Nội · <b>06 đại lý</b> tại TP. HCM</p>
         </div>
       </div>
@@ -694,7 +800,7 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="s4-card-icon" style="background:linear-gradient(135deg,rgba(62,143,201,.15),rgba(62,143,201,.05))">📋</div>
         <div class="s4-card-body">
           <div class="kpi-lab">Danh sách tiếp cận mở rộng</div>
-          <div class="kpi-top"><div class="num" data-count="43">0</div><span class="badge blue">đại lý miền Bắc</span></div>
+          <div class="kpi-top"><div class="num" data-count="43">0</div><span style="font-weight:600;color:var(--gold);font-size:1.4rem">đại lý miền Bắc</span></div>
           <p class="kpi-sub">Tiếp cận <b>43 đại lý miền Bắc</b> theo danh sách CNVN gửi ngày <b>8/5/2026</b>.</p>
         </div>
       </div>
@@ -702,19 +808,19 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="s4-card-icon" style="background:linear-gradient(135deg,rgba(210,90,75,.15),rgba(210,90,75,.05))">📊</div>
         <div class="s4-card-body">
           <div class="kpi-lab">Kết quả bán — Kênh Phòng vé/Đại lý</div>
-          <div class="kpi-top"><div class="num" data-count="7">0</div><span class="badge coral">đơn · T1–T7/2026</span></div>
-          <p class="kpi-sub">Phí lũy kế <b>4,64 triệu ₫</b> — trong khi toàn hệ thống TripCARE cùng kỳ đạt <b>~129.726 đơn / 28,60 tỷ ₫</b>. Hiệu quả kênh đại lý chưa tương xứng quy mô mạng lưới.</p>
+          <div class="kpi-top"><div class="num" data-count="6">0</div><span style="font-weight:600;color:var(--gold);font-size:1.4rem">đơn · T1–T7/2026</span></div>
+          <p class="kpi-sub">Phí lũy kế <b>3,87 triệu ₫</b> — trong khi toàn hệ thống TripCARE cùng kỳ đạt <b>~129.726 đơn / 28,60 tỷ ₫</b>. Hiệu quả kênh đại lý chưa tương xứng quy mô mạng lưới.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- NOTES S4: Nền tảng triển khai đã có: 8 đại lý ký, đào tạo xong nhóm đầu. Nhưng số liệu nói thẳng: 7 tháng chỉ 7 đơn qua kênh Phòng vé/Đại lý, trong khi toàn hệ thống gần 130 nghìn đơn. Vấn đề không nằm ở số điểm bán mà ở mô hình bán — dẫn vào phần phân tích. -->
+<!-- NOTES S4: Nền tảng triển khai đã có: 8 đại lý ký, đào tạo xong nhóm đầu. Nhưng số liệu nói thẳng: 7 tháng chỉ 6 đơn qua kênh Phòng vé/Đại lý, trong khi toàn hệ thống gần 130 nghìn đơn. Vấn đề không nằm ở số điểm bán mà ở mô hình bán — dẫn vào phần phân tích. -->
 
 <!-- ================= SLIDE 5 — DASHBOARD KQKD ================= -->
 <section class="slide" id="s5">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HIỆN TRẠNG</span></div>
-  <div class="eyebrow rv" style="--i:0">Kết quả kinh doanh</div>
+  <div class="eyebrow rv" style="--i:0">BÁO CÁO KINH DOANH</div>
   <h1 class="sl-title rv" style="--i:1">Số liệu bán TripCARE năm 2026</h1>
   <div class="goldline gline"></div>
   <div class="stat-strip rv" style="--i:2">
@@ -749,6 +855,15 @@ body.printmode .rpath{stroke-dashoffset:0}
 </section>
 <!-- NOTES S5: Kênh Đại lý thuần: 6 đơn / 3,87 triệu ₫ trong 7 tháng — Hồ Phi Long 3 đơn (T1), Thăng Long 1 đơn (T2), F.C. Việt Nam 1 đơn (T5), P.N.R 1 đơn (T6); T3, T4, T7 trắng đơn. Đơn 07/01 766.000đ là của Phòng vé nên loại khỏi thống kê đại lý. Thanh so sánh: toàn hệ thống 28,60 tỷ (28.603.767.000đ theo sheet VNA cập nhật 20/07) — kênh đại lý chỉ ~0,01%, tức ~1/7.400. Khoảng cách này chính là lý do có cuộc họp hôm nay. -->
 
+<!-- ================= DIVIDER 2 ================= -->
+<section class="slide slide-divider" id="div2">
+  <div class="rv" style="--i:0">
+    <div class="sd-part">PHẦN 02</div>
+    <div class="sd-num">02</div>
+    <div class="sd-title">Phân tích khó khăn, vướng mắc</div>
+  </div>
+</section>
+
 <!-- ================= SLIDE 6 — 3 NHÓM KHÓ KHĂN ================= -->
 <section class="slide" id="s6">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">VƯỚNG MẮC</span></div>
@@ -770,7 +885,7 @@ body.printmode .rpath{stroke-dashoffset:0}
       <div class="tl-card tl-item-up rv" style="--i:4;grid-column:3" onclick="goId('s9')">
         <div class="tic"><div class="ic">🖥️</div><div class="tnum">03</div></div>
         <b>Hệ thống &amp; quy trình bán</b>
-        <span>Cả ba kênh API Hub, TAP, Lotus Booker đều có điểm nghẽn riêng.</span>
+        <span>Các kênh API Hub, TAP, Lotus Booker đều có khó khăn riêng.</span>
       </div>
       <div class="tl-band">
         <div class="tl-track"></div>
@@ -822,6 +937,49 @@ body.printmode .rpath{stroke-dashoffset:0}
 </section>
 <!-- NOTES S7: Nhóm khó khăn gốc rễ nhất: sản phẩm sinh ra cho khách lẻ web/app, không phải cho cấu trúc khách của đại lý. Hai điểm lệch chính: quyền lợi/phí (toàn diện vs cơ bản) và phạm vi (OW/RT VNA vs đa chặng mọi hãng, tính theo điểm đi - điểm đến). Đây là căn cứ cho đề xuất khảo sát TripCARE Lite/Essential ở phần định hướng. -->
 
+<!-- ================= SLIDE 7B — KHOẢNG GAP SẢN PHẨM ================= -->
+<section class="slide" id="s7b">
+  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">VƯỚNG MẮC 1/3</span></div>
+  <div class="eyebrow rv" style="--i:0">Khó khăn 1 · Sản phẩm &amp; phạm vi</div>
+  <h1 class="sl-title rv" style="--i:1">Khoảng trống (Gap) giữa sản phẩm TripCARE và nhu cầu thực tế</h1>
+  <div class="goldline gline"></div>
+  
+  <div class="gap-diagram rv" style="--i:2">
+    <!-- TripCARE -->
+    <div class="gap-col gap-tripcare">
+      <div class="gap-header">SẢN PHẨM TRIPCARE HIỆN TẠI</div>
+      <div class="gap-list">
+        <div class="gap-item"><i>🛡️</i><div><b>Quyền lợi toàn diện</b>Thiết kế đầy đủ, mức phí tương ứng, phù hợp khách lẻ mua trực tiếp trên website.</div></div>
+        <div class="gap-item"><i>🎫</i><div><b>Hành trình cố định</b>Chỉ áp dụng cho các hành trình một chiều hoặc khứ hồi.</div></div>
+        <div class="gap-item"><i>✈️</i><div><b>Đơn hãng (Vietnam Airlines)</b>Chỉ có hiệu lực trên các chuyến bay do Vietnam Airlines khai thác.</div></div>
+        <div class="gap-item"><i>💰</i><div><b>Phí theo hành trình cụ thể</b>Tính phí linh hoạt nhưng phức tạp theo từng chặng lẻ.</div></div>
+      </div>
+    </div>
+    
+    <!-- Gap -->
+    <div class="gap-divider">
+      <div class="gap-line"></div>
+      <div class="gap-badge">GAP</div>
+      <svg viewBox="0 0 100 200" style="width:40px; height:80px; margin-top:20px; position:relative; z-index:1">
+         <path d="M10,100 L90,100 M70,80 L90,100 L70,120" stroke="var(--ink-mute)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+         <path d="M90,140 L10,140 M30,120 L10,140 L30,160" stroke="var(--ink-mute)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      </svg>
+    </div>
+    
+    <!-- Customer Needs -->
+    <div class="gap-col gap-customer">
+      <div class="gap-header">NHU CẦU CỦA ĐẠI LÝ &amp; KHÁCH HÀNG</div>
+      <div class="gap-list">
+        <div class="gap-item"><i>📉</i><div><b>Quyền lợi cơ bản, phí rẻ</b>Khách đoàn đặc biệt nhạy cảm về giá, chỉ cần bảo vệ cơ bản nhất.</div></div>
+        <div class="gap-item"><i>🔀</i><div><b>Đa chặng (Multi-city)</b>Nhu cầu bay nối chuyến, nhiều điểm đến phức tạp trong một lịch trình.</div></div>
+        <div class="gap-item"><i>🌐</i><div><b>Đa hãng hàng không</b>Khách quốc tế, khách tour thường xuyên bay kết hợp nhiều hãng.</div></div>
+        <div class="gap-item"><i>📍</i><div><b>Phí theo Điểm đi - Điểm đến</b>Cách tính phí đơn giản, phổ thông trên thị trường bảo hiểm du lịch.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- NOTES S7B: Diagram làm rõ khoảng gap giữa sản phẩm và nhu cầu. TripCARE thiết kế như một sản phẩm cao cấp, toàn diện, đóng khung cho VNA. Trong khi khách đại lý cần tính linh hoạt cao (đa chặng, đa hãng) và tính kinh tế (cơ bản, rẻ). Đây là lý do cốt lõi khiến đại lý khó bán dù có hệ thống. -->
+
 <!-- ================= SLIDE 8 — NHÓM 2: HOA HỒNG ================= -->
 <section class="slide" id="s8">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">VƯỚNG MẮC 2/3</span></div>
@@ -833,9 +991,39 @@ body.printmode .rpath{stroke-dashoffset:0}
       <li>Đại lý phản ánh hoa hồng TripCARE <b>thấp hơn một số sản phẩm bảo hiểm khác</b> mà họ đang phân phối — có sản phẩm hoa hồng <b>lên tới 50%</b>.</li>
       <li>Đại lý còn phải <b>trích một phần hoa hồng</b> cho hoạt động tư vấn, bán hàng và chăm sóc khách sau bán — phần thực hưởng còn thấp hơn nữa.</li>
     </ul>
+    <div class="card rv" style="--i:3;margin-top:clamp(.8rem,2vmin,1.3rem)">
+      <h3>📋 Cơ cấu chi trả hiện tại của PVI · Kênh đại lý</h3>
+      <div class="comm-wrap">
+        <table class="comm-tbl">
+          <thead>
+            <tr>
+              <th rowspan="2" style="width:34%">Sản phẩm bảo hiểm</th>
+              <th colspan="2" class="grp-vna">VNA</th>
+              <th colspan="2" class="grp-agy">Đại lý bán vé</th>
+            </tr>
+            <tr>
+              <th class="sub">Tỷ lệ hoa hồng</th><th class="sub">Tỷ lệ chi phí hỗ trợ</th>
+              <th class="sub">Tỷ lệ hoa hồng</th><th class="sub">Tỷ lệ chi phí hỗ trợ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Phạm vi chính · Quyền lợi bảo hiểm <b>Sức khỏe</b></td>
+              <td class="pc">8%</td><td class="na">Không áp dụng</td>
+              <td class="pc hl">12%</td><td class="pc hl">8%</td>
+            </tr>
+            <tr>
+              <td>Phạm vi bổ sung · Quyền lợi bảo hiểm <b>Trở ngại chuyến đi</b></td>
+              <td class="pc">1%</td><td class="na">Không áp dụng</td>
+              <td class="pc hl">4%</td><td class="na">Không áp dụng</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
-<!-- NOTES S8: Đại lý so sánh trực tiếp với các sản phẩm bảo hiểm du lịch khác đang phân phối, có sản phẩm hoa hồng tới 50%. Phần nhận về còn phải chia cho tư vấn, CSKH sau bán và mạng lưới sub-agent. Không đi sâu cơ chế tài chính nội bộ tại buổi họp — phương án xử lý nêu ở phần định hướng (cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý). -->
+<!-- NOTES S8: Đại lý so sánh trực tiếp với các sản phẩm bảo hiểm du lịch khác đang phân phối, có sản phẩm hoa hồng tới 50%. Phần nhận về còn phải chia cho tư vấn, CSKH sau bán và mạng lưới sub-agent. Không đi sâu cơ chế tài chính nội bộ tại buổi họp — phương án xử lý nêu ở phần định hướng (cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý). Bảng cơ cấu chi trả hiện tại (kênh đại lý): VNA 8%/1% hoa hồng; đại lý bán vé 12%+8% hỗ trợ (phạm vi chính) và 4% (phạm vi bổ sung). -->
 
 <!-- ================= SLIDE 9 — NHÓM 3: HỆ THỐNG & QUY TRÌNH ================= -->
 <section class="slide" id="s9">
@@ -849,67 +1037,95 @@ body.printmode .rpath{stroke-dashoffset:0}
   </div>
   <div class="pillar-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="card pillar rv" style="--i:3">
-      <div class="pnum">KÊNH ONLINE · API HUB</div><h3>🌐 API Hub</h3>
-      <ul>
-        <li>Luồng API cho bảo hiểm <b>chưa sẵn sàng</b> — SSR bảo hiểm phức tạp hơn các ancillary khác (hành lý, chọn chỗ) vì phải kết nối với hệ thống bên ngoài (CRS của Chubb).</li>
-        <li>Kể cả khi có luồng, VNA–PVI phải <b>thuyết phục từng đại lý</b> đồng ý kết nối TripCARE — không phải đại lý nào cũng triển khai.</li>
-        <li>Khách của đại lý có thể bay <b>nhiều hãng trong một hành trình</b> → đại lý sẽ ưu tiên kết nối API với sản phẩm BHDL <b>áp dụng chung cho tất cả các hãng</b> và mọi loại hành trình (một chiều / khứ hồi / đa chặng), thay vì sản phẩm chỉ bán cho vé VNA.</li>
-      </ul>
+      <div class="pnum">KÊNH ONLINE</div><h3>🌐 API Hub</h3>
+      <div class="s10-rows" style="gap:1.2rem; margin-top:1.2rem">
+        <div class="s10-irow rv" style="--i:4"><span class="ri" style="border-color:var(--s-teal); background:rgba(42,160,137,.1)">🔌</span><span style="font-size:1.03rem">Luồng API bảo hiểm <b>chưa sẵn sàng</b> — SSR bảo hiểm phức tạp hơn do phải kết nối CRS bên ngoài.</span></div>
+        <div class="s10-irow rv" style="--i:5"><span class="ri" style="border-color:var(--s-teal); background:rgba(42,160,137,.1)">🤝</span><span style="font-size:1.03rem">Phải <b>thuyết phục từng đại lý</b> đồng ý kết nối TripCARE — không phải đại lý nào cũng chịu triển khai.</span></div>
+        <div class="s10-irow rv" style="--i:6"><span class="ri" style="border-color:var(--s-teal); background:rgba(42,160,137,.1)">✈️</span><span style="font-size:1.03rem">Khách thường bay <b>nhiều hãng</b> → đại lý ưu tiên BHDL <b>áp dụng chung mọi hãng</b> thay vì chỉ vé VNA.</span></div>
+      </div>
     </div>
     <div class="card pillar rv" style="--i:4">
-      <div class="pnum">KÊNH OFFLINE · TAP</div><h3>🖥️ TAP</h3>
-      <ul>
-        <li>Các đại lý Top 1 có mạng lưới sub-agent lớn <b>không dùng TAP làm hệ thống bán chính</b>: phần lớn nhập lệnh mua vé trên AIDL và chỉ chuyển sang TAP ở bước thanh toán, hoặc dùng hệ thống đặt vé riêng cho sub-agent / web bán trực tiếp cho khách cuối.</li>
-        <li>Đại lý <b>không chia sẻ tài khoản TAP cho 100% sub-agent</b> → giới hạn ngay số lượng booker có thể bán bảo hiểm cho khách hàng.</li>
-        <li>Thao tác mua bảo hiểm trên TAP không phức tạp, nhưng việc bán <b>phụ thuộc tư vấn trực tiếp của booker</b> — thời lượng trao đổi đã tập trung cho vé và ancillaries nên bảo hiểm thường <b>không được ưu tiên giới thiệu</b>.</li>
-      </ul>
+      <div class="pnum">KÊNH OFFLINE</div><h3>🖥️ TAP</h3>
+      <div class="s10-rows" style="gap:1.2rem; margin-top:1.2rem">
+        <div class="s10-irow rv" style="--i:5"><span class="ri" style="border-color:var(--s-coral); background:rgba(176,61,47,.1)">💻</span><span style="font-size:1.03rem">Đại lý Top 1 <b>không dùng TAP làm hệ thống chính</b>: chủ yếu nhập lệnh mua vé trên AIDL hoặc hệ thống riêng.</span></div>
+        <div class="s10-irow rv" style="--i:6"><span class="ri" style="border-color:var(--s-coral); background:rgba(176,61,47,.1)">🔒</span><span style="font-size:1.03rem">Đại lý <b>không chia sẻ tài khoản TAP</b> cho 100% sub-agent → giới hạn ngay số người có thể bán bảo hiểm.</span></div>
+        <div class="s10-irow rv" style="--i:7"><span class="ri" style="border-color:var(--s-coral); background:rgba(176,61,47,.1)">⏱️</span><span style="font-size:1.03rem">Bán <b>phụ thuộc tư vấn thủ công</b> — thời gian đã tập trung cho vé nên bảo hiểm <b>ít được giới thiệu</b>.</span></div>
+      </div>
     </div>
     <div class="card pillar rv" style="--i:5">
-      <div class="pnum">KÊNH OFFLINE · LOTUS BOOKER</div><h3>🧑‍💼 Lotus Booker</h3>
-      <ul>
-        <li>Áp dụng được cho các sub-agent — nhưng bán offline <b>phụ thuộc hoàn toàn vào tư vấn trực tiếp của booker</b>, không có cơ chế opt-out gắn sẵn trong luồng mua vé như trên web/app.</li>
-        <li>Đại lý ưu tiên thủ tục tư vấn <b>nhanh gọn cho vé</b>; với bảo hiểm, booker phải <b>tư vấn thủ công nhiều hơn và hỗ trợ sau bán</b> → booker chỉ bán khi <b>khách chủ động hỏi</b>.</li>
-        <li>Mỗi đại lý có nhiều booker, biến động thường xuyên → <b>khó phủ đào tạo và kiểm soát chất lượng tư vấn</b> tới từng người bán cuối.</li>
-      </ul>
+      <div class="pnum">KÊNH OFFLINE</div><h3>🧑‍💼 Lotus Booker</h3>
+      <div class="s10-rows" style="gap:1.2rem; margin-top:1.2rem">
+        <div class="s10-irow rv" style="--i:6"><span class="ri" style="border-color:var(--s-gold); background:rgba(184,135,42,.1)">🗣️</span><span style="font-size:1.03rem">Bán offline <b>phụ thuộc hoàn toàn tư vấn trực tiếp</b>, không có cơ chế opt-out tự động như web/app.</span></div>
+        <div class="s10-irow rv" style="--i:7"><span class="ri" style="border-color:var(--s-gold); background:rgba(184,135,42,.1)">⚡</span><span style="font-size:1.03rem">Ưu tiên thủ tục vé <b>nhanh gọn</b>; bảo hiểm tốn thời gian hơn → booker chỉ bán <b>khi khách chủ động hỏi</b>.</span></div>
+        <div class="s10-irow rv" style="--i:8"><span class="ri" style="border-color:var(--s-gold); background:rgba(184,135,42,.1)">🎓</span><span style="font-size:1.03rem">Đại lý nhiều booker, hay biến động → <b>rất khó phủ đào tạo và kiểm soát</b> chất lượng tới từng người bán.</span></div>
+      </div>
     </div>
   </div>
 </section>
 <!-- NOTES S9: Đối chiếu với web/app để thấy vì sao đại lý khó bán: thiếu cả 4 yếu tố (khách chưa chốt hãng, không có opt-out, phải tư vấn thủ công, phí tách riêng). Ba kênh, thuần khó khăn theo file Giải pháp 25/06 & Báo cáo khảo sát T1/2026: API Hub — luồng chưa sẵn sàng (SSR bảo hiểm dính CRS Chubb), phải thuyết phục từng đại lý, khách đa hãng nên đại lý muốn sản phẩm đa hãng; TAP — đại lý Top 1 dùng AIDL/hệ thống riêng, không chia tài khoản cho sub-agent, booker không ưu tiên giới thiệu; Lotus Booker — không có opt-out trong luồng, phụ thuộc tư vấn thủ công, khó phủ đào tạo tới từng booker. Các cập nhật tiến độ (IT VNA test API, độ phủ Lotus Booker 300-400 đại lý/vé 10 tỷ ₫ ngày, ancillary chọn chỗ-hành lý) đã chuyển sang slide Giải pháp phối hợp. -->
 
+<!-- ================= DIVIDER 3 ================= -->
+<section class="slide slide-divider" id="div3">
+  <div class="rv" style="--i:0">
+    <div class="sd-part">PHẦN 03</div>
+    <div class="sd-num">03</div>
+    <div class="sd-title">Đánh giá hoạt động đã triển khai</div>
+  </div>
+</section>
+
 <!-- ================= SLIDE 10 — ĐÁNH GIÁ HIỆU QUẢ ================= -->
 <section class="slide" id="s10">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐÁNH GIÁ HIỆU QUẢ</span></div>
   <div class="eyebrow rv" style="--i:0">Đánh giá hoạt động đã triển khai · Thúc đẩy bán &amp; mở rộng đại lý</div>
-  <h1 class="sl-title rv" style="--i:1">Đánh giá hiệu quả các giải pháp thúc đẩy bán do PVI và VNA phối hợp triển khai</h1>
+  <h1 class="sl-title rv" style="--i:1">Các giải pháp thúc đẩy bán do PVI và VNA phối hợp triển khai</h1>
   <div class="goldline gline"></div>
-  <div class="route-grid">
-    <div class="card rv" style="--i:2">
-      <h3>🎯 Thúc đẩy bán hàng</h3>
-      <ul class="klist" style="margin-top:.4rem">
-        <li>Duy trì cơ chế <b>thưởng 10% cho booker</b> thông qua chương trình TripCARE Star Awards.</li>
-        <li>Triển khai chương trình <b>"Chào hè TripCARE – Booker Rewards"</b> trong giai đoạn <b>tháng 4–6/2026</b>, gồm:
-          <ul style="list-style:none;margin-top:.3rem;display:flex;flex-direction:column;gap:.25rem">
-            <li style="padding-left:.6rem;position:static">– Thưởng nóng <b>20.000 đồng/đơn nội địa</b> và <b>40.000 đồng/đơn quốc tế</b>;</li>
-            <li style="padding-left:.6rem;position:static">– Thưởng theo kết quả tuần lên tới <b>1,5 triệu đồng</b> và theo tháng lên tới <b>8 triệu đồng</b>.</li>
-          </ul>
-        </li>
-        <li>Tuy nhiên, TripCARE vẫn chủ yếu được giới thiệu <b>khi khách hàng chủ động hỏi</b>, chưa trở thành nội dung tư vấn thường xuyên trong quá trình bán vé.</li>
-      </ul>
+  <div class="s10-wrap">
+    <div class="s10-left">
+      <div class="s10-panel rv" style="--i:2;--c:#2AA089;--ct:rgba(42,160,137,.12);--cb:rgba(42,160,137,.32)">
+        <div class="s10-head">
+          <span class="s10-ic">🎯</span>
+          <div class="s10-htxt"><span class="s10-kicker">Hướng 01 · Thương mại</span><h3>Thúc đẩy bán hàng</h3></div>
+          <span class="s10-tag">ĐÃ TRIỂN KHAI</span>
+        </div>
+        <div class="s10-body">
+          <p class="s10-lead">Duy trì <b>thưởng 10% cho booker</b> qua TripCARE Star Awards và chạy chiến dịch <b>"Chào hè – Booker Rewards"</b> (tháng 4–6/2026).</p>
+          <div class="s10-chips">
+            <div class="s10-chip rv" style="--i:3"><div class="cv">10%</div><div class="cl">hoa hồng booker · Star Awards</div></div>
+            <div class="s10-chip rv" style="--i:4"><div class="cv">20K / 40K</div><div class="cl">mỗi đơn nội địa / quốc tế</div></div>
+            <div class="s10-chip rv" style="--i:5"><div class="cv">1,5 triệu</div><div class="cl">thưởng mốc tuần</div></div>
+            <div class="s10-chip rv" style="--i:6"><div class="cv">8 triệu</div><div class="cl">thưởng mốc tháng</div></div>
+          </div>
+          <div class="s10-note"><span class="ni">⚠️</span><span>TripCARE vẫn chủ yếu được giới thiệu <b>khi khách chủ động hỏi</b> — chưa thành nội dung tư vấn thường xuyên khi bán vé.</span></div>
+        </div>
+      </div>
+
+      <div class="s10-panel rv" style="--i:4;--c:#3E8FC9;--ct:rgba(62,143,201,.12);--cb:rgba(62,143,201,.32)">
+        <div class="s10-head">
+          <span class="s10-ic">🤝</span>
+          <div class="s10-htxt"><span class="s10-kicker">Hướng 02 · Mạng lưới</span><h3>Mở rộng đại lý &amp; đào tạo</h3></div>
+          <span class="s10-tag">ĐÃ TRIỂN KHAI</span>
+        </div>
+        <div class="s10-body">
+          <div class="s10-rows">
+            <div class="s10-irow rv" style="--i:5"><span class="ri">🏢</span><span>PVI–VNA <b>làm việc trực tiếp</b> với nhiều đại lý miền Bắc để giới thiệu sản phẩm &amp; thống nhất cách triển khai.</span></div>
+            <div class="s10-irow rv" style="--i:6"><span class="ri">🎓</span><span>Đào tạo &amp; tài trợ thi <b>chứng chỉ đại lý bảo hiểm</b> — nhưng <b>tỷ lệ đỗ chưa cao</b>.</span></div>
+            <div class="s10-irow rv" style="--i:7"><span class="ri">📊</span><span>Một số đại lý chưa tiếp tục sau trao đổi ban đầu; đại lý đã ký cũng phản ánh <b>hiệu quả bán chưa cao</b>.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s10-insight rv" style="--i:7">
+        <span class="bi">💡</span>
+        <p>Đã triển khai trên nhiều phương diện nhưng <b>chưa tạo cải thiện rõ rệt</b>. Vướng mắc cốt lõi ở ba nhóm: <span class="s10-pills"><span class="s10-pill">Sản phẩm</span><span class="s10-pill">Cơ chế hoa hồng</span><span class="s10-pill">Quy trình bán</span></span></p>
+      </div>
     </div>
-    <div class="card rv" style="--i:3">
-      <h3>🤝 Mở rộng đại lý và đào tạo</h3>
-      <ul class="klist" style="margin-top:.4rem">
-        <li>PVI-VNA đã <b>trực tiếp làm việc</b> với nhiều đại lý tại khu vực miền Bắc để giới thiệu sản phẩm và trao đổi phương án triển khai.</li>
-        <li>Tổ chức đào tạo và tài trợ cho nhân viên đại lý tham gia thi <b>chứng chỉ đại lý bảo hiểm</b>; tuy nhiên <b>tỷ lệ đỗ không cao</b>.</li>
-        <li>Một số đại lý chưa tiếp tục triển khai sau giai đoạn trao đổi ban đầu; các đại lý đã ký kết cũng phản ánh <b>hiệu quả bán hàng chưa cao</b>.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="mix-msg rv" style="--i:4">
-    Các hoạt động thúc đẩy bán hàng đã được triển khai trên nhiều phương diện nhưng <b>chưa tạo ra cải thiện rõ rệt</b>. Những vướng mắc cốt lõi tập trung ở ba nhóm: <b>sản phẩm, cơ chế hoa hồng và quy trình bán trên hệ thống</b>.
+    <figure class="s10-poster rv" style="--i:3">
+      <a href="assets/booker-rewards-poster.jpg" target="_blank" rel="noopener"><img src="assets/booker-rewards-poster.jpg" alt="Poster chương trình Chào hè TripCARE – Booker Rewards"></a>
+      <figcaption>Chương trình đã chạy: <b>Chào hè TripCARE – Booker Rewards</b> · áp dụng 10/05–10/06/2026</figcaption>
+    </figure>
   </div>
 </section>
-<!-- NOTES S10: Slide đánh giá hiệu quả các giải pháp PVI và VNA đã phối hợp triển khai. Hai hướng: (1) thúc đẩy bán — thưởng 10% thường xuyên + campaign Chào hè T4-6/2026; (2) mở rộng đại lý & đào tạo — làm việc trực tiếp miền Bắc, thi chứng chỉ (tỷ lệ hạn chế). Kết luận: vướng mắc cốt lõi ở sản phẩm, hoa hồng và quy trình bán. -->
+<!-- NOTES S10: Slide đánh giá hiệu quả các giải pháp PVI và VNA đã phối hợp triển khai. Hai hướng: (1) thúc đẩy bán — thưởng 10% thường xuyên + campaign Chào hè T4-6/2026; (2) mở rộng đại lý & đào tạo — làm việc trực tiếp miền Bắc, thi chứng chỉ (tỷ lệ hạn chế). Kết luận: vướng mắc cốt lõi ở sản phẩm, hoa hồng và quy trình bán. Cột phải: poster assets/booker-rewards-poster.jpg minh họa chương trình Chào hè Booker Rewards (áp dụng 10/05–10/06/2026), click mở bản full. -->
 
 <!-- ================= SLIDE 10B — HÀNH TRÌNH GIAN NAN ================= -->
 <section class="slide" id="s10b">
@@ -919,26 +1135,30 @@ body.printmode .rpath{stroke-dashoffset:0}
   <div class="goldline gline"></div>
   <div class="hs-grid">
     <div class="hs-card rv" style="--i:2;--hs:var(--s-blue)">
-      <div class="hs-era">2019–2021 · White Label trên Sabre</div>
+      <div class="hs-era">2021-2024: WHITE LABEL TRÊN SABRE</div>
+      <a class="hs-shot" href="assets/whitelabel-form.png" target="_blank" rel="noopener">
+        <img src="assets/whitelabel-form.png" alt="Trang White Label bán TripCARE cho đại lý">
+      </a>
       <h3>Quy trình rời rạc, thanh toán bất tiện — phải đóng lại</h3>
       <ul>
-        <li>Muốn bán được một đơn bảo hiểm, đại lý phải thao tác trên <b>hai hệ thống tách rời</b>: đặt chỗ và xuất vé trên Sabre DCP xong, phải mở tiếp website VNA và <b>nhập lại toàn bộ thông tin khách</b> (mã đặt chỗ PNR, họ tên, email) lần thứ hai trên trang White Label mới mua được bảo hiểm.</li>
-        <li>Đại lý phải <b>thanh toán bằng thẻ cho từng giao dịch riêng lẻ</b> trên White Label, trong khi nhu cầu thực tế là đối soát theo tháng và cấn trừ vào hoa hồng — hệ thống không đáp ứng được.</li>
-        <li>Kết quả: kênh đại lý <b>không phát sinh doanh thu</b>; năm 2021 White Label phải đóng khi VNA chuyển đổi hệ thống sang Amadeus.</li>
+        <li>Bán một đơn phải thao tác trên <b>hai hệ thống tách rời</b>: đặt và xuất vé trên Sabre DCP xong lại mở trang White Label <b>nhập lại toàn bộ thông tin khách</b> lần hai, rồi <b>thanh toán bằng thẻ cho từng giao dịch</b> — trong khi đại lý cần đối soát theo tháng, cấn trừ vào hoa hồng.</li>
+        <li>Kết quả: kênh đại lý không phát sinh doanh thu; năm 2024 đóng White Label khi VNA chuyển đổi hệ thống sang Amadeus.</li>
       </ul>
     </div>
     <div class="hs-card rv" style="--i:3;--hs:var(--s-gold)">
-      <div class="hs-era">2024–nay · Amadeus — đầu tư TAP</div>
+      <div class="hs-era">2024–HIỆN TẠI: TAP TRÊN AMADEUS</div>
+      <a class="hs-shot" href="assets/tap-flow.png" target="_blank" rel="noopener">
+        <img src="assets/tap-flow.png" alt="Màn hình bán bảo hiểm trên hệ thống TAP" onerror="this.closest('.hs-shot').style.display='none'">
+      </a>
       <h3>Đầu tư tích hợp đáng kể nhưng lệch với cách đại lý vận hành</h3>
       <ul>
-        <li>PVI đã <b>đầu tư chi phí tích hợp đáng kể</b> để đưa bảo hiểm lên TAP, nhưng các đại lý Top 1 có mạng lưới sub-agent lớn <b>không dùng TAP làm hệ thống bán chính</b>: phần lớn nhập lệnh trên AIDL rồi chỉ qua TAP ở bước thanh toán, hoặc dùng hệ thống đặt vé riêng / web bán thẳng cho khách cuối.</li>
-        <li>Tài khoản TAP <b>không được chia sẻ cho 100% sub-agent</b> → số booker có thể bán bảo hiểm bị giới hạn ngay từ đầu.</li>
-        <li>Bán trên TAP phụ thuộc <b>tư vấn thủ công của booker</b> — thời lượng trao đổi đã dồn hết cho vé và ancillaries, nên bảo hiểm chỉ được nhắc đến khi khách chủ động hỏi.</li>
-        <li>Kết quả sau 7 tháng đầu 2026: chỉ <b>07 đơn / 4,64 triệu ₫</b> trên toàn kênh phòng vé/đại lý.</li>
+        <li>Đại lý Top 1 <b>không dùng TAP làm hệ thống bán chính</b> (nhập lệnh trên AIDL, chỉ qua TAP ở bước thanh toán) và <b>không chia tài khoản TAP cho toàn bộ sub-agent</b> — số booker bán được bảo hiểm bị giới hạn dù PVI đã đầu tư tích hợp đáng kể.</li>
+        <li>Bán bảo hiểm ngay trong luồng vé nhưng <b>phụ thuộc tư vấn thủ công của booker</b>; thời lượng đã dồn cho vé và ancillaries nên bảo hiểm chỉ được nhắc khi khách chủ động hỏi.</li>
+        <li>Kết quả 7 tháng đầu 2026: chỉ <b>06 đơn / 3,87 triệu ₫</b> toàn kênh phòng vé/đại lý.</li>
       </ul>
     </div>
     <div class="hs-card rv" style="--i:4;--hs:var(--s-teal)">
-      <div class="hs-era">Sắp tới · Đầu tư API Hub</div>
+      <div class="hs-era">SẮP TỚI: MỞ RỘNG TRÊN API HUB</div>
       <h3>Tiếp tục đầu tư, nhưng không phải đại lý nào cũng bán</h3>
       <ul>
         <li>SSR bảo hiểm <b>phức tạp hơn mọi SSR khác</b> (hành lý, chọn chỗ…) vì phải kết nối với hệ thống bên ngoài (CRS của Chubb) — VNA và Amadeus vẫn đang xây luồng, chưa có mốc hoàn thành chắc chắn.</li>
@@ -948,36 +1168,16 @@ body.printmode .rpath{stroke-dashoffset:0}
     </div>
   </div>
 </section>
-<!-- NOTES S10B: Hành trình hệ thống 2019-2026, thuần khó khăn: White Label/Sabre (nhập liệu 2 lần, thanh toán thẻ từng giao dịch, không doanh thu, đóng 2021) → TAP/Amadeus (đầu tư tích hợp đáng kể nhưng đại lý Top 1 không dùng TAP làm hệ thống chính, không chia tài khoản sub-agent, phụ thuộc booker; 7 tháng 7 đơn/4,64tr) → API Hub (SSR bảo hiểm dính CRS Chubb, chỉ hợp đại lý có hệ thống riêng, phải thuyết phục từng đại lý, khách đa hãng). -->
+<!-- NOTES S10B: Hành trình hệ thống 2019-2026, thuần khó khăn: White Label/Sabre (nhập liệu 2 lần, thanh toán thẻ từng giao dịch, không doanh thu, đóng 2021) → TAP/Amadeus (đầu tư tích hợp đáng kể nhưng đại lý Top 1 không dùng TAP làm hệ thống chính, không chia tài khoản sub-agent, phụ thuộc booker; 7 tháng 6 đơn/3,87tr) → API Hub (SSR bảo hiểm dính CRS Chubb, chỉ hợp đại lý có hệ thống riêng, phải thuyết phục từng đại lý, khách đa hãng). -->
 
-<!-- ================= SLIDE 10C — CƠ CHẾ & SẢN PHẨM ================= -->
-<section class="slide" id="s10c">
-  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HÀNH TRÌNH DỰ ÁN</span></div>
-  <div class="eyebrow rv" style="--i:0">Đánh giá hoạt động đã triển khai · Cơ chế &amp; sản phẩm</div>
-  <h1 class="sl-title rv" style="--i:1">Cơ chế đã nhiều lần tối ưu, hướng sản phẩm mới vẫn còn giới hạn</h1>
-  <div class="goldline gline"></div>
-  <div class="hs-grid cols2">
-    <div class="hs-card rv" style="--i:2;--hs:var(--s-coral)">
-      <div class="hs-era">Cơ chế chi trả · Tăng rồi vẫn chưa chạm kỳ vọng</div>
-      <h3>Đã nhiều lần tối ưu cơ chế, vẫn chưa chạm kỳ vọng 40–50% của đại lý</h3>
-      <ul>
-        <li>PVI đã <b>rà soát, tối ưu cơ chế chi trả</b> qua nhiều vòng để dồn tối đa nguồn chi cho đại lý — nhưng mức chi trả vẫn bị <b>giới hạn bởi khung quy định của Bộ Tài chính</b>, chưa thể chạm mức <b>40–50%</b> mà đại lý kỳ vọng.</li>
-        <li>Trong khi đó, đại lý đang phân phối các sản phẩm BHDL khác có hoa hồng <b>lên tới 40–50%</b> — mức chi hiện tại của TripCARE chưa đủ sức cạnh tranh trực diện.</li>
-        <li>Đại lý còn phải trích hoa hồng cho tư vấn, bán hàng và chăm sóc khách sau bán → phần thực hưởng thấp hơn nữa, <b>chưa đủ tạo động lực bán</b>.</li>
-      </ul>
-    </div>
-    <div class="hs-card rv" style="--i:3;--hs:var(--s-coral)">
-      <div class="hs-era">TripCARE Lite · Cũng chưa phải lời giải trọn vẹn</div>
-      <h3>Vẫn chỉ bán được cho vé của Vietnam Airlines</h3>
-      <ul>
-        <li>Dù phí thấp hơn, quyền lợi cơ bản và mở thêm đa chặng, TripCARE Lite <b>vẫn chỉ áp dụng cho chặng bay của VNA</b> — không bán được cho vé hãng khác, trong khi khách quốc tế đa chặng/đa hãng chiếm tỷ trọng lớn tại nhiều đại lý.</li>
-        <li>Đại lý/OTA sẽ <b>không ưu tiên đầu tư UI/UX API riêng</b> chỉ cho bảo hiểm của một hãng hàng không, do vậy <b>OTA cũng chưa chắc đồng ý đẩy bán trên luồng API online</b> cho khách hàng cuối.</li>
-        <li>Tạo sản phẩm mới còn <b>phát sinh thêm chi phí tích hợp trên hệ thống Amadeus</b> và cần các bên đánh giá lại hiệu quả trước khi cam kết triển khai.</li>
-      </ul>
-    </div>
+<!-- ================= DIVIDER 4 ================= -->
+<section class="slide slide-divider" id="div4">
+  <div class="rv" style="--i:0">
+    <div class="sd-part">PHẦN 04</div>
+    <div class="sd-num">04</div>
+    <div class="sd-title">Thống nhất định hướng</div>
   </div>
 </section>
-<!-- NOTES S10C: Cơ chế & sản phẩm, thuần khó khăn: Cơ chế — đã tối ưu nhiều vòng nhưng bị giới hạn bởi khung BTC, xa mức 40-50% đại lý yêu cầu (không nêu số liệu ĐMCP/Chubb trên slide). TripCARE Lite — vẫn chỉ vé VNA, OTA chưa chắc đẩy bán API online, phát sinh chi phí tích hợp Amadeus. -->
 
 <!-- ================= SLIDE 11 — SẢN PHẨM KỲ VỌNG ================= -->
 <section class="slide" id="s11">
@@ -1001,15 +1201,15 @@ body.printmode .rpath{stroke-dashoffset:0}
         </g>
         <g class="mxpt" transform="translate(392,96)">
           <circle r="9" fill="var(--s-coral)"/>
-          <text class="mxname" x="0" y="-20" text-anchor="middle">Sản phẩm cạnh tranh</text>
-          <text class="mxsub" x="0" y="28" text-anchor="middle">BHDL truyền thống · mọi hãng</text>
+          <text class="mxname" x="0" y="24" text-anchor="middle" style="font-size:13.5px">Sản phẩm cạnh tranh</text>
+          <text class="mxsub" x="0" y="42" text-anchor="middle" style="font-size:11px">BHDL truyền thống · mọi hãng</text>
         </g>
-        <g class="mxpt" transform="translate(360,52)">
+        <g class="mxpt" transform="translate(360,65)">
           <circle r="10" fill="none" stroke="var(--s-teal)" stroke-width="2.4" stroke-dasharray="4 3"/>
-          <text class="mxname" x="0" y="-34" text-anchor="middle" style="fill:#177A67">TripCARE Lite (kỳ vọng)</text>
-          <text class="mxsub" x="0" y="-18" text-anchor="middle" style="fill:#B03D2F">vẫn chỉ áp dụng cho vé VNA</text>
+          <text class="mxname" x="0" y="-30" text-anchor="middle" style="fill:#177A67; font-size:14px">TripCARE Lite (kỳ vọng)</text>
+          <text class="mxsub" x="0" y="-14" text-anchor="middle" style="fill:#B03D2F; font-size:11.5px">vẫn chỉ áp dụng cho vé VNA</text>
         </g>
-        <path d="M172,212 C240,150 295,105 344,68" fill="none" stroke="var(--s-teal)" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#arrLite)"/>
+        <path d="M172,212 C240,160 295,120 353,74" fill="none" stroke="var(--s-teal)" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#arrLite)"/>
         <defs><marker id="arrLite" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--s-teal)"/></marker></defs>
       </svg>
     </div>
@@ -1024,6 +1224,72 @@ body.printmode .rpath{stroke-dashoffset:0}
 </section>
 <!-- NOTES S11: Ma trận định vị: TripCARE hiện tại ở góc "khó thao tác - kém hấp dẫn"; sản phẩm cạnh tranh ở góc ngược lại. TripCARE Lite/Essential (vòng teal đứt nét) là vị trí kỳ vọng: dễ thao tác hơn cả sản phẩm cạnh tranh nhờ nằm ngay trong luồng bán vé, hấp dẫn nhờ phí thấp + quyền lợi đúng nhu cầu. Đây là cầu nối sang 4 trụ định hướng ở slide sau. -->
 
+<!-- ================= SLIDE 10C — CƠ CHẾ CHI TRẢ & GIỚI HẠN SẢN PHẨM (ĐỊNH HƯỚNG, sau TripCARE Lite) ================= -->
+<section class="slide" id="s10c">
+  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐỊNH HƯỚNG</span></div>
+  <div class="eyebrow rv" style="--i:0">Định hướng dự án</div>
+  <h1 class="sl-title rv" style="--i:1">Giới hạn của Cơ chế chi trả và sản phẩm cập nhật</h1>
+  <div class="goldline gline"></div>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; flex:1; align-items: stretch; margin-top: 1rem">
+    
+    <div class="s10-panel rv" style="--i:2; --c:#B03D2F; --ct:rgba(176,61,47,.08); --cb:rgba(176,61,47,.2)">
+      <div class="s10-head">
+        <span class="s10-ic">💸</span>
+        <div class="s10-htxt"><span class="s10-kicker">Giới hạn 01</span><h3>Cơ chế chi trả</h3></div>
+
+      </div>
+      <div class="s10-body" style="padding: 1.6rem; display:flex; flex-direction:column; gap:1.8rem; flex:1">
+        <p class="s10-lead" style="font-size:1.1rem; line-height:1.6">Dù PVI cân nhắc tăng thêm hoa hồng, mức chi trả <b>vẫn bị giới hạn bởi khung Hợp đồng đại lý</b> và không thể đạt mức 40–50% như đại lý yêu cầu.</p>
+        
+        <div class="s10-chips" style="gap:1rem">
+          <div class="s10-chip" style="background:linear-gradient(160deg,#fff,rgba(176,61,47,.08)); border-color:rgba(176,61,47,.2)">
+            <div class="cv" style="color:#B03D2F; font-size:1.3rem">40–50%</div>
+            <div class="cl">Mức hoa hồng<br/>SP cạnh tranh</div>
+          </div>
+          <div class="s10-chip" style="background:linear-gradient(160deg,#fff,rgba(176,61,47,.08)); border-color:rgba(176,61,47,.2)">
+            <div class="cv" style="color:#B03D2F; font-size:1.3rem">Hợp đồng</div>
+            <div class="cl">Giới hạn theo<br/>khung hợp đồng</div>
+          </div>
+        </div>
+        
+        <div class="s10-rows" style="gap:1rem; margin-top:auto">
+          <div class="s10-irow"><span class="ri" style="border-color:#B03D2F; background:rgba(176,61,47,.1)">⚠️</span><span style="font-size:1.05rem">Sau khi trích tư vấn, CSKH, phần đại lý thực hưởng <b>chưa đủ tạo động lực bán</b>.</span></div>
+          <div class="s10-irow"><span class="ri" style="border-color:#B03D2F; background:rgba(176,61,47,.1)">🎁</span><span style="font-size:1.05rem">PVI có thể chạy thêm incentive cho booker nhưng vẫn <b>gặp rào cản về việc chủ động tư vấn</b> sản phẩm cho khách.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s10-panel rv" style="--i:3; --c:#C89A33; --ct:rgba(200,154,51,.1); --cb:rgba(200,154,51,.3)">
+      <div class="s10-head">
+        <span class="s10-ic">🎫</span>
+        <div class="s10-htxt"><span class="s10-kicker">Giới hạn 02</span><h3>Sản phẩm TripCARE Lite</h3></div>
+
+      </div>
+      <div class="s10-body" style="padding: 1.6rem; display:flex; flex-direction:column; gap:1.8rem; flex:1">
+        <p class="s10-lead" style="font-size:1.1rem; line-height:1.6">Dù phí thấp và dễ tư vấn, sản phẩm mới <b>vẫn giới hạn trong phạm vi vé Vietnam Airlines</b>.</p>
+        
+        <div class="s10-chips" style="gap:1rem">
+          <div class="s10-chip" style="background:linear-gradient(160deg,#fff,rgba(200,154,51,.08)); border-color:rgba(200,154,51,.2)">
+            <div class="cv" style="color:#C89A33; font-size:1.3rem">Đa hãng</div>
+            <div class="cl">Khách hàng lớn<br/>chưa được phục vụ</div>
+          </div>
+          <div class="s10-chip" style="background:linear-gradient(160deg,#fff,rgba(200,154,51,.08)); border-color:rgba(200,154,51,.2)">
+            <div class="cv" style="color:#C89A33; font-size:1.3rem">Amadeus</div>
+            <div class="cl">Chi phí tích hợp<br/>luồng API</div>
+          </div>
+        </div>
+        
+        <div class="s10-rows" style="gap:1rem; margin-top:auto">
+          <div class="s10-irow"><span class="ri" style="border-color:#C89A33; background:rgba(200,154,51,.12)">🌐</span><span style="font-size:1.05rem">Đại lý ưu tiên sản phẩm bảo hiểm <b>áp dụng cho mọi hành trình bay</b> thay vì chỉ một hãng bay.</span></div>
+          <div class="s10-irow"><span class="ri" style="border-color:#C89A33; background:rgba(200,154,51,.12)">💻</span><span style="font-size:1.05rem">Đại lý/OTA <b>không ưu tiên đầu tư luồng API riêng</b> chỉ cho bảo hiểm VNA.</span></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!-- NOTES S10C: (ĐÃ CHUYỂN sang PHẦN 04 định hướng, đặt ngay sau s11 TripCARE Lite). Diễn đạt lại theo văn phong slide (bỏ văn nói). Hai giới hạn còn lại: (1) Cơ chế chi trả — dù bổ sung vẫn chưa đạt 40-50% do khung quy định BTC, sau khi trích tư vấn/CSKH phần thực hưởng còn thấp hơn; (2) TripCARE Lite — vẫn chỉ vé VNA, OTA chưa chắc đẩy bán API online, phát sinh chi phí tích hợp Amadeus. Dẫn sang s12 (4 trụ giải pháp). -->
+
 <!-- ================= SLIDE 12 — ĐỊNH HƯỚNG XỬ LÝ ================= -->
 <section class="slide" id="s12">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐỊNH HƯỚNG</span></div>
@@ -1031,61 +1297,55 @@ body.printmode .rpath{stroke-dashoffset:0}
   <h1 class="sl-title rv" style="--i:1">Giải pháp phối hợp giữa VNA – PVI</h1>
   <div class="goldline gline"></div>
 
-  <div class="pillar-grid">
-    <div class="card pillar rv" style="--i:3">
-      <div class="pnum">01</div><h3>Kênh bán</h3>
-      <ul>
-        <li>Duy trì TAP / Lotus Booker để mở rộng độ phủ điểm bán</li>
-        <li>Đánh giá API Hub cho đại lý lớn, OTA, mô hình B2B / B2B2C</li>
-        <li><b>IT VNA đang test luồng API Hub</b> — khi ổn định sẽ chuyển PVI test tiếp về Premium &amp; Coverage</li>
-        <li>Lotus Booker đã phủ <b>~300–400 đại lý</b> (doanh thu vé ~10 tỷ ₫/ngày), đã có ancillary chọn chỗ / hành lý — <b>sắp tới bổ sung bảo hiểm</b></li>
-      </ul>
+  <div class="body-wrap" style="justify-content:center; gap:1.2rem; display:flex; flex-direction:column; flex:1">
+    <div class="pillar-grid">
+      <div class="card pillar rv" style="--i:3">
+        <div class="pnum">01</div><h3>Kênh bán</h3>
+        <ul>
+          <li>Duy trì TAP / Lotus Booker để mở rộng độ phủ điểm bán</li>
+          <li>Đánh giá API Hub cho đại lý lớn, OTA, mô hình B2B / B2B2C</li>
+          <li><b>IT VNA đang test luồng API Hub</b> — khi ổn định sẽ chuyển PVI test tiếp về Premium &amp; Coverage</li>
+          <li>Lotus Booker đã phủ <b>~300–400 đại lý</b> (doanh thu vé ~10 tỷ ₫/ngày), đã có ancillary chọn chỗ / hành lý — <b>sắp tới bổ sung bảo hiểm</b></li>
+        </ul>
+      </div>
+      <div class="card pillar rv" style="--i:4">
+        <div class="pnum">02</div><h3>Động lực bán</h3>
+        <ul>
+          <li>Cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý</li>
+          <li>Chương trình thi đua / top seller theo kỳ ngắn</li>
+        </ul>
+      </div>
+      <div class="card pillar rv" style="--i:5">
+        <div class="pnum">03</div><h3>Sản phẩm</h3>
+        <ul>
+          <li>Khảo sát TripCARE Lite / Essential</li>
+          <li>Phí thấp hơn, quyền lợi cơ bản, dễ tư vấn</li>
+          <li>Đánh giá khả năng áp dụng cho hành trình đa chặng trong phạm vi phù hợp</li>
+        </ul>
+      </div>
     </div>
-    <div class="card pillar rv" style="--i:4">
-      <div class="pnum">02</div><h3>Công cụ bán</h3>
-      <ul>
-        <li>Sales script ngắn cho booker</li>
-        <li>Tài liệu tra cứu nhanh quyền lợi – phí</li>
-        <li>Hướng dẫn quy trình bồi thường</li>
-      </ul>
-    </div>
-    <div class="card pillar rv" style="--i:5">
-      <div class="pnum">03</div><h3>Động lực bán</h3>
-      <ul>
-        <li>Cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý</li>
-        <li>Chương trình thi đua / top seller theo kỳ ngắn</li>
-      </ul>
-    </div>
-    <div class="card pillar rv" style="--i:6">
-      <div class="pnum">04</div><h3>Sản phẩm</h3>
-      <ul>
-        <li>Khảo sát TripCARE Lite / Essential</li>
-        <li>Phí thấp hơn, quyền lợi cơ bản, dễ tư vấn</li>
-        <li>Đánh giá khả năng áp dụng cho hành trình đa chặng trong phạm vi phù hợp</li>
-      </ul>
+    
+    <div class="dec-grid" style="grid-template-columns:repeat(3,1fr); margin-bottom:0">
+      <div class="dec rv" style="--i:6"><div class="dnum">✓</div><p><b>Đẩy nhanh tiến độ Lotus Booker / API Hub</b> — mở rộng độ phủ đại lý; hoàn tất test API (IT VNA → PVI test Premium &amp; Coverage).</p></div>
+      <div class="dec rv" style="--i:7"><div class="dnum">✓</div><p><b>Khảo sát cơ chế tăng thêm hoa hồng</b> — mức hỗ trợ phù hợp tạo động lực cho đại lý/booker; nguyên tắc đưa vào Hợp đồng đại lý.</p></div>
+      <div class="dec rv" style="--i:8"><div class="dnum">✓</div><p><b>Khảo sát đại lý về sản phẩm TripCARE Lite</b> — nhu cầu thực tế, mức phí và phạm vi hành trình mong muốn.</p></div>
     </div>
   </div>
 </section>
-<!-- NOTES S12: Bốn trụ trả lời trực tiếp sáu nhóm khó khăn: kênh bán xử lý độ phủ hệ thống; công cụ bán xử lý thao tác booker; động lực bán xử lý cạnh tranh thương mại; sản phẩm xử lý độ lệch với tệp khách. Mỗi trụ cần một đầu mối VNA + một đầu mối PVI ngay sau cuộc họp. -->
+<!-- NOTES S12: Ba trụ giải pháp kết hợp với 3 hành động triển khai ngay. -->
 
-<!-- ================= SLIDE 13 — ĐỀ XUẤT THỐNG NHẤT ================= -->
-<section class="slide" id="s13">
-  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">THỐNG NHẤT</span></div>
-  <div class="eyebrow rv" style="--i:0">Đề xuất của PVI</div>
-  <h1 class="sl-title rv" style="--i:1">Nội dung đề xuất thống nhất tại cuộc họp</h1>
-  <div class="goldline gline"></div>
-  <div class="body-wrap">
-    <div class="dec-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div class="dec rv" style="--i:2"><div class="dnum">01</div><p><b>Khảo sát đại lý về sản phẩm TripCARE Lite</b> — nhu cầu thực tế, mức phí và phạm vi hành trình mong muốn.</p></div>
-      <div class="dec rv" style="--i:3"><div class="dnum">02</div><p><b>Khảo sát cơ chế tăng thêm hoa hồng</b> — mức hỗ trợ phù hợp tạo động lực cho đại lý/booker; nguyên tắc đưa vào Hợp đồng đại lý.</p></div>
-      <div class="dec rv" style="--i:4"><div class="dnum">03</div><p><b>Đẩy nhanh tiến độ Lotus Booker / API Hub</b> — mở rộng độ phủ đại lý; hoàn tất test API (IT VNA → PVI test Premium &amp; Coverage).</p></div>
+<!-- ================= SLIDE 13 — THẢO LUẬN ================= -->
+<section class="slide slide-divider" id="s13" style="align-items:center; padding-left:0; text-align:center">
+  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%">
+    <div class="rv" style="--i:0; font-family:var(--font-d); font-weight:800; font-size:1.2rem; letter-spacing:2px; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.8rem; color:#10294F">
+      <span>VIETNAM AIRLINES</span>
+      <span style="color:var(--ink-mute); font-weight:400">✕</span>
+      <span>BẢO HIỂM PVI</span>
     </div>
-    <div class="endquote rv" style="--i:7">
-      <p>“Ưu tiên của PVI và VNA là xây dựng <b>mô hình bán phù hợp với thực tế vận hành của đại lý</b>,<br/>thay vì chỉ mở thêm điểm bán.”</p>
-    </div>
+    <div class="sd-title rv" style="--i:1" style="font-size:clamp(4.5rem, 10vmin, 6.5rem); padding-top:1.5rem; border-top-color:var(--gold); text-transform:uppercase; background:linear-gradient(180deg, #10294F, #0078D7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:inline-block">THẢO LUẬN</div>
   </div>
 </section>
-<!-- NOTES S13: Ba nội dung xin ý kiến thống nhất: (1) khảo sát đại lý về TripCARE Lite — nhu cầu, mức phí, phạm vi; (2) khảo sát cơ chế tăng thêm hoa hồng — đại lý có ủng hộ không, nguyên tắc đưa vào Hợp đồng đại lý; (3) đẩy nhanh tiến độ Lotus Booker / API Hub — mở rộng độ phủ + hoàn tất chuỗi test API. Mỗi nội dung gắn mốc thời gian và đầu mối trong biên bản họp. Kết bằng thông điệp: chất lượng mô hình bán quan trọng hơn số lượng điểm bán. -->
+<!-- NOTES S13: Cảm ơn và chuyển sang phần hỏi đáp, trao đổi tự do. -->
 
 </div><!-- /deck -->
 
@@ -1198,7 +1458,6 @@ const data = {
 
   roadmap:[
     {pillar:"Kênh bán", items:["Duy trì TAP / Lotus Booker","Đánh giá API Hub: đại lý lớn, OTA, B2B/B2B2C"]},
-    {pillar:"Công cụ bán", items:["Sales script ngắn","Tài liệu tra cứu nhanh","Hướng dẫn quy trình bồi thường"]},
     {pillar:"Động lực bán", items:["Cân nhắc bổ sung chi phí hỗ trợ triển khai bán hàng trong Hợp đồng đại lý","Thi đua / top seller kỳ ngắn"]},
     {pillar:"Sản phẩm", items:["Khảo sát TripCARE Lite/Essential","Phí thấp, quyền lợi cơ bản","Đánh giá hành trình đa chặng trong phạm vi phù hợp"]}
   ]
