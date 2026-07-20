@@ -374,17 +374,17 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .mxname{font-size:15px;font-weight:700;fill:var(--ink)}
 .mxsub{font-size:12px;fill:var(--ink-sub)}
 
-/* ============ S10B hành trình gian nan ============ */
-.hs-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.45rem,1.3vmin,.85rem);flex:1;min-height:0;grid-template-rows:1fr auto}
-.hs-card{grid-column:span 2;background:#fff;border:1px solid var(--line);border-top:4px solid var(--hs,var(--gold-bright));
-  border-radius:14px;padding:clamp(.55rem,1.5vmin,.95rem);display:flex;flex-direction:column;gap:.35rem;
+/* ============ S10B/S10C hành trình gian nan ============ */
+.hs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.7vmin,1.1rem);flex:1;min-height:0}
+.hs-grid.cols2{grid-template-columns:repeat(2,1fr)}
+.hs-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--hs,var(--gold-bright));
+  border-radius:14px;padding:clamp(.8rem,2vmin,1.3rem);display:flex;flex-direction:column;gap:.5rem;
   min-height:0;overflow-y:auto;box-shadow:0 4px 14px rgba(16,42,80,.06)}
-.hs-card.wide{grid-column:span 3}
-.hs-era{font-family:var(--font-d);font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hs,var(--gold))}
-.hs-card h3{font-family:var(--font-d);font-size:calc(var(--t-small)*.98);line-height:1.32;color:var(--ink);margin-bottom:.1rem}
-.hs-card ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
-.hs-card li{font-size:calc(var(--t-small)*.84);color:var(--ink-sub);line-height:1.45;padding-left:.85rem;position:relative}
-.hs-card li::before{content:"✕";position:absolute;left:0;top:.2em;color:var(--bad);font-size:.66em;font-weight:800}
+.hs-era{font-family:var(--font-d);font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hs,var(--gold))}
+.hs-card h3{font-family:var(--font-d);font-size:calc(var(--t-body)*1.04);line-height:1.32;color:var(--ink);margin-bottom:.1rem}
+.hs-card ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.hs-card li{font-size:calc(var(--t-small)*1.06);color:var(--ink-sub);line-height:1.52;padding-left:1rem;position:relative}
+.hs-card li::before{content:"✕";position:absolute;left:0;top:.24em;color:var(--bad);font-size:.7em;font-weight:800}
 .hs-card li b{color:var(--ink)}
 
 /* ============ S12 pillars ============ */
@@ -508,7 +508,7 @@ body.printmode .rpath{stroke-dashoffset:0}
   <h1 class="sl-title rv" style="--i:1">Mục tiêu cuộc họp</h1>
   <div class="goldline gline"></div>
   <div class="body-wrap">
-    <div class="obj-grid">
+    <div class="obj-grid" style="grid-template-columns:repeat(4,1fr)">
       <div class="card rv" style="--i:1" onclick="goId('s4')">
         <div class="obj-top"><span class="onum">PHẦN 01</span><span class="oic">🛫</span></div>
         <h3>Cập nhật hiện trạng</h3>
@@ -519,13 +519,19 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="obj-top"><span class="onum">PHẦN 02</span><span class="oic">🧭</span></div>
         <h3>Phân tích khó khăn, vướng mắc</h3>
         <p class="odesc">Các nhóm khó khăn chính đang cản hiệu quả bán của kênh.</p>
-        <div class="ofoot">Slide 5–10 <span>→</span></div>
+        <div class="ofoot">Slide 5–8 <span>→</span></div>
       </div>
-      <div class="card rv" style="--i:3" onclick="goId('s12')">
-        <div class="obj-top"><span class="onum">PHẦN 03</span><span class="oic">🛬</span></div>
+      <div class="card rv" style="--i:3" onclick="goId('s10')">
+        <div class="obj-top"><span class="onum">PHẦN 03</span><span class="oic">📉</span></div>
+        <h3>Đánh giá hoạt động đã triển khai</h3>
+        <p class="odesc">Hiệu quả các nỗ lực PVI–VNA đã phối hợp qua từng giai đoạn.</p>
+        <div class="ofoot">Slide 9–11 <span>→</span></div>
+      </div>
+      <div class="card rv" style="--i:4" onclick="goId('s11')">
+        <div class="obj-top"><span class="onum">PHẦN 04</span><span class="oic">🛬</span></div>
         <h3>Thống nhất định hướng</h3>
         <p class="odesc">Đề xuất giải pháp cho kênh bán.</p>
-        <div class="ofoot">Slide 11–13 <span>→</span></div>
+        <div class="ofoot">Slide 12–14 <span>→</span></div>
       </div>
     </div>
     <div class="fplan rv" style="--i:4">
@@ -539,16 +545,22 @@ body.printmode .rpath{stroke-dashoffset:0}
           <text class="fp-sub" x="86" y="159" text-anchor="middle">Slide 3–4</text>
         </g>
         <g class="fp-stop" onclick="goId('s6')">
-          <circle cx="500" cy="65" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="4.6s" repeatCount="indefinite"/></circle>
-          <circle class="fp-dot" cx="500" cy="65" r="7" fill="#C99A33"/>
-          <text x="500" y="97" text-anchor="middle">02 · Vướng mắc</text>
-          <text class="fp-sub" x="500" y="115" text-anchor="middle">Slide 5–10</text>
+          <circle cx="362" cy="70" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="4.6s" repeatCount="indefinite"/></circle>
+          <circle class="fp-dot" cx="362" cy="70" r="7" fill="#C99A33"/>
+          <text x="362" y="101" text-anchor="middle">02 · Vướng mắc</text>
+          <text class="fp-sub" x="362" y="119" text-anchor="middle">Slide 5–8</text>
         </g>
-        <g class="fp-stop" onclick="goId('s12')">
+        <g class="fp-stop" onclick="goId('s10')">
+          <circle cx="638" cy="70" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="4.9s" repeatCount="indefinite"/></circle>
+          <circle class="fp-dot" cx="638" cy="70" r="7" fill="#C99A33"/>
+          <text x="638" y="101" text-anchor="middle">03 · Đánh giá hoạt động</text>
+          <text class="fp-sub" x="638" y="119" text-anchor="middle">Slide 9–11</text>
+        </g>
+        <g class="fp-stop" onclick="goId('s11')">
           <circle cx="914" cy="110" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="5.2s" repeatCount="indefinite"/></circle>
           <circle class="fp-dot" cx="914" cy="110" r="7" fill="#C99A33"/>
-          <text x="914" y="141" text-anchor="middle">03 · Định hướng</text>
-          <text class="fp-sub" x="914" y="159" text-anchor="middle">Slide 11–13</text>
+          <text x="914" y="141" text-anchor="middle">04 · Định hướng</text>
+          <text class="fp-sub" x="914" y="159" text-anchor="middle">Slide 12–14</text>
         </g>
         <g opacity=".95">
           <g>
@@ -867,6 +879,7 @@ body.printmode .rpath{stroke-dashoffset:0}
 <!-- ================= SLIDE 10 — ĐÁNH GIÁ HIỆU QUẢ ================= -->
 <section class="slide" id="s10">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐÁNH GIÁ HIỆU QUẢ</span></div>
+  <div class="eyebrow rv" style="--i:0">Đánh giá hoạt động đã triển khai · Thúc đẩy bán &amp; mở rộng đại lý</div>
   <h1 class="sl-title rv" style="--i:1">Đánh giá hiệu quả các giải pháp thúc đẩy bán do PVI và VNA phối hợp triển khai</h1>
   <div class="goldline gline"></div>
   <div class="route-grid">
@@ -901,8 +914,8 @@ body.printmode .rpath{stroke-dashoffset:0}
 <!-- ================= SLIDE 10B — HÀNH TRÌNH GIAN NAN ================= -->
 <section class="slide" id="s10b">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HÀNH TRÌNH DỰ ÁN</span></div>
-  <div class="eyebrow rv" style="--i:0">Nhìn lại hành trình 2019–2026</div>
-  <h1 class="sl-title rv" style="--i:1">Dự án nhiều gian nan — PVI &amp; VNA đã phối hợp thử nhiều mô hình, mô hình nào cũng gặp rào cản</h1>
+  <div class="eyebrow rv" style="--i:0">Đánh giá hoạt động đã triển khai · Hành trình hệ thống 2019–2026</div>
+  <h1 class="sl-title rv" style="--i:1">PVI &amp; VNA đã thử nhiều mô hình hệ thống — mô hình nào cũng gặp rào cản</h1>
   <div class="goldline gline"></div>
   <div class="hs-grid">
     <div class="hs-card rv" style="--i:2;--hs:var(--s-blue)">
@@ -933,7 +946,18 @@ body.printmode .rpath{stroke-dashoffset:0}
         <li>Khách của đại lý thường bay <b>nhiều hãng trong một hành trình</b> → đại lý sẽ ưu tiên kết nối API với sản phẩm bảo hiểm dùng chung cho mọi hãng, mọi loại hành trình, thay vì sản phẩm chỉ áp dụng cho vé VNA.</li>
       </ul>
     </div>
-    <div class="hs-card wide rv" style="--i:5;--hs:var(--s-coral)">
+  </div>
+</section>
+<!-- NOTES S10B: Hành trình hệ thống 2019-2026, thuần khó khăn: White Label/Sabre (nhập liệu 2 lần, thanh toán thẻ từng giao dịch, không doanh thu, đóng 2021) → TAP/Amadeus (đầu tư tích hợp đáng kể nhưng đại lý Top 1 không dùng TAP làm hệ thống chính, không chia tài khoản sub-agent, phụ thuộc booker; 7 tháng 7 đơn/4,64tr) → API Hub (SSR bảo hiểm dính CRS Chubb, chỉ hợp đại lý có hệ thống riêng, phải thuyết phục từng đại lý, khách đa hãng). -->
+
+<!-- ================= SLIDE 10C — CƠ CHẾ & SẢN PHẨM ================= -->
+<section class="slide" id="s10c">
+  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HÀNH TRÌNH DỰ ÁN</span></div>
+  <div class="eyebrow rv" style="--i:0">Đánh giá hoạt động đã triển khai · Cơ chế &amp; sản phẩm</div>
+  <h1 class="sl-title rv" style="--i:1">Cơ chế đã nhiều lần tối ưu, hướng sản phẩm mới vẫn còn giới hạn</h1>
+  <div class="goldline gline"></div>
+  <div class="hs-grid cols2">
+    <div class="hs-card rv" style="--i:2;--hs:var(--s-coral)">
       <div class="hs-era">Cơ chế chi trả · Tăng rồi vẫn chưa chạm kỳ vọng</div>
       <h3>Đã nhiều lần tối ưu cơ chế, vẫn chưa chạm kỳ vọng 40–50% của đại lý</h3>
       <ul>
@@ -942,7 +966,7 @@ body.printmode .rpath{stroke-dashoffset:0}
         <li>Đại lý còn phải trích hoa hồng cho tư vấn, bán hàng và chăm sóc khách sau bán → phần thực hưởng thấp hơn nữa, <b>chưa đủ tạo động lực bán</b>.</li>
       </ul>
     </div>
-    <div class="hs-card wide rv" style="--i:6;--hs:var(--s-coral)">
+    <div class="hs-card rv" style="--i:3;--hs:var(--s-coral)">
       <div class="hs-era">TripCARE Lite · Cũng chưa phải lời giải trọn vẹn</div>
       <h3>Vẫn chỉ bán được cho vé của Vietnam Airlines</h3>
       <ul>
@@ -953,7 +977,7 @@ body.printmode .rpath{stroke-dashoffset:0}
     </div>
   </div>
 </section>
-<!-- NOTES S10B: Slide "kể khổ" theo yêu cầu: 5 khối. (1) White Label/Sabre 2019-2021 — nhập liệu 2 lần, thanh toán thẻ từng giao dịch, không doanh thu, phải đóng. (2) TAP/Amadeus — đầu tư tích hợp đáng kể nhưng đại lý Top 1 không dùng TAP làm hệ thống chính, không chia tài khoản cho sub-agent, bán phụ thuộc booker; 7 tháng chỉ 7 đơn/4,64tr. (3) API Hub — SSR bảo hiểm phức tạp vì dính CRS Chubb, chỉ hợp đại lý có hệ thống riêng, phải thuyết phục từng đại lý, khách đa hãng nên đại lý muốn sản phẩm đa hãng. (4) Cơ chế — đã tối ưu nhiều vòng nhưng bị giới hạn bởi khung BTC, xa mức 40-50% đại lý yêu cầu (không nêu số liệu ĐMCP/Chubb trên slide). (5) TripCARE Lite — vẫn chỉ vé VNA, OTA chưa chắc đẩy bán API online, phát sinh chi phí tích hợp Amadeus. -->
+<!-- NOTES S10C: Cơ chế & sản phẩm, thuần khó khăn: Cơ chế — đã tối ưu nhiều vòng nhưng bị giới hạn bởi khung BTC, xa mức 40-50% đại lý yêu cầu (không nêu số liệu ĐMCP/Chubb trên slide). TripCARE Lite — vẫn chỉ vé VNA, OTA chưa chắc đẩy bán API online, phát sinh chi phí tích hợp Amadeus. -->
 
 <!-- ================= SLIDE 11 — SẢN PHẨM KỲ VỌNG ================= -->
 <section class="slide" id="s11">
