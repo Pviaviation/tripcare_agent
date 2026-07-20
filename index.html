@@ -530,10 +530,14 @@ body.printmode .rpath{stroke-dashoffset:0}
   .slide{height:100vh}
 }
 @media (max-width:900px){
-  .obj-grid,.kpi-grid,.persona-grid,.pillar-grid,.dec-grid{grid-template-columns:1fr 1fr}
-  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols,.s10-wrap{grid-template-columns:1fr}
+  .slide{overflow-y:auto;overflow-x:hidden;padding:1.2rem 1rem 4rem 1rem;justify-content:flex-start}
+  .body-wrap{justify-content:flex-start}
+  .obj-grid,.kpi-grid,.persona-grid,.pillar-grid,.dec-grid,.gap-diagram,.s5-grid,.hs-grid,.pgrid{grid-template-columns:1fr !important;gap:1.5rem}
+  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols,.s10-wrap,.tl-grid{grid-template-columns:1fr !important;gap:1.5rem}
+  .tl-band{display:none}
   .s10-poster img{flex:none;width:100%;max-width:100%;height:auto}
   .s10-poster figcaption{max-width:100%}
+  #dots, #hint{display:none}
 }
 </style>
 </head>
