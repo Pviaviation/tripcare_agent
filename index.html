@@ -839,30 +839,30 @@ body.printmode .rpath{stroke-dashoffset:0}
     <div class="card pillar rv" style="--i:3">
       <div class="pnum">KÊNH ONLINE · API HUB</div><h3>🌐 API Hub</h3>
       <ul>
-        <li><b>IT VNA đang test luồng API</b> — khi ổn định sẽ chuyển PVI test tiếp về Premium và Coverage.</li>
-        <li>Phải thuyết phục từng đại lý kết nối; khách đại lý hay bay nhiều hãng trong một hành trình.</li>
-        <li>Đại lý ưu tiên kết nối API với sản phẩm dùng chung cho mọi hãng, mọi loại hành trình.</li>
+        <li>Luồng API cho bảo hiểm <b>chưa sẵn sàng</b> — SSR bảo hiểm phức tạp hơn các ancillary khác (hành lý, chọn chỗ) vì phải kết nối với hệ thống bên ngoài (CRS của Chubb).</li>
+        <li>Kể cả khi có luồng, VNA–PVI phải <b>thuyết phục từng đại lý</b> đồng ý kết nối TripCARE — không phải đại lý nào cũng triển khai.</li>
+        <li>Khách của đại lý có thể bay <b>nhiều hãng trong một hành trình</b> → đại lý sẽ ưu tiên kết nối API với sản phẩm BHDL <b>áp dụng chung cho tất cả các hãng</b> và mọi loại hành trình (một chiều / khứ hồi / đa chặng), thay vì sản phẩm chỉ bán cho vé VNA.</li>
       </ul>
     </div>
     <div class="card pillar rv" style="--i:4">
       <div class="pnum">KÊNH OFFLINE · TAP</div><h3>🖥️ TAP</h3>
       <ul>
-        <li>Đại lý Top 1 không dùng TAP làm hệ thống bán chính — nhập lệnh trên AIDL, chỉ qua TAP ở bước thanh toán.</li>
-        <li>Nhiều đại lý có hệ thống đặt vé riêng cho sub-agent hoặc web bán cho khách cuối.</li>
-        <li>Tài khoản TAP không chia sẻ cho 100% sub-agent → giới hạn số booker bán được bảo hiểm.</li>
+        <li>Các đại lý Top 1 có mạng lưới sub-agent lớn <b>không dùng TAP làm hệ thống bán chính</b>: phần lớn nhập lệnh mua vé trên AIDL và chỉ chuyển sang TAP ở bước thanh toán, hoặc dùng hệ thống đặt vé riêng cho sub-agent / web bán trực tiếp cho khách cuối.</li>
+        <li>Đại lý <b>không chia sẻ tài khoản TAP cho 100% sub-agent</b> → giới hạn ngay số lượng booker có thể bán bảo hiểm cho khách hàng.</li>
+        <li>Thao tác mua bảo hiểm trên TAP không phức tạp, nhưng việc bán <b>phụ thuộc tư vấn trực tiếp của booker</b> — thời lượng trao đổi đã tập trung cho vé và ancillaries nên bảo hiểm thường <b>không được ưu tiên giới thiệu</b>.</li>
       </ul>
     </div>
     <div class="card pillar rv" style="--i:5">
       <div class="pnum">KÊNH OFFLINE · LOTUS BOOKER</div><h3>🧑‍💼 Lotus Booker</h3>
       <ul>
-        <li>Việc bán BH qua Lotus Booker sẽ áp dụng được cho các sub-agent, tuy nhiên việc bán offline phụ thuộc vào tư vấn trực tiếp của booker. Đại lý ưu tiên thủ tục tư vấn nhanh gọn nên sẽ ưu tiên thời gian bán vé. Với Bảo hiểm, booker phải tư vấn thủ công nhiều hơn và hỗ trợ sau bán, nên booker chỉ bán BH khi khách chủ động hỏi.</li>
-        <li>Hiện đã triển khai tới <b>~300–400 đại lý</b>, doanh thu vé ~<b>10 tỷ ₫/ngày</b>; mỗi đại lý có nhiều booker nên khó ước tính tổng số người bán.</li>
-        <li>Đã có các ancillary cơ bản như <b>chọn chỗ, hành lý</b>, và sắp tới sẽ bổ sung thêm bảo hiểm.</li>
+        <li>Áp dụng được cho các sub-agent — nhưng bán offline <b>phụ thuộc hoàn toàn vào tư vấn trực tiếp của booker</b>, không có cơ chế opt-out gắn sẵn trong luồng mua vé như trên web/app.</li>
+        <li>Đại lý ưu tiên thủ tục tư vấn <b>nhanh gọn cho vé</b>; với bảo hiểm, booker phải <b>tư vấn thủ công nhiều hơn và hỗ trợ sau bán</b> → booker chỉ bán khi <b>khách chủ động hỏi</b>.</li>
+        <li>Mỗi đại lý có nhiều booker, biến động thường xuyên → <b>khó phủ đào tạo và kiểm soát chất lượng tư vấn</b> tới từng người bán cuối.</li>
       </ul>
     </div>
   </div>
 </section>
-<!-- NOTES S9: Đối chiếu với web/app để thấy vì sao đại lý khó bán: thiếu cả 4 yếu tố (khách chưa chốt hãng, không có opt-out, phải tư vấn thủ công, phí tách riêng). Ba kênh: API Hub — IT VNA đang test, xong sẽ chuyển PVI test Premium & Coverage, nhưng đại lý muốn sản phẩm đa hãng; TAP — không phủ tới sub-agent; Lotus Booker — điểm sáng về độ phủ (~300-400 đại lý, vé ~10 tỷ ₫/ngày, đã có ancillary chọn chỗ/hành lý) nhưng bán bảo hiểm vẫn phụ thuộc tư vấn thủ công của booker. -->
+<!-- NOTES S9: Đối chiếu với web/app để thấy vì sao đại lý khó bán: thiếu cả 4 yếu tố (khách chưa chốt hãng, không có opt-out, phải tư vấn thủ công, phí tách riêng). Ba kênh, thuần khó khăn theo file Giải pháp 25/06 & Báo cáo khảo sát T1/2026: API Hub — luồng chưa sẵn sàng (SSR bảo hiểm dính CRS Chubb), phải thuyết phục từng đại lý, khách đa hãng nên đại lý muốn sản phẩm đa hãng; TAP — đại lý Top 1 dùng AIDL/hệ thống riêng, không chia tài khoản cho sub-agent, booker không ưu tiên giới thiệu; Lotus Booker — không có opt-out trong luồng, phụ thuộc tư vấn thủ công, khó phủ đào tạo tới từng booker. Các cập nhật tiến độ (IT VNA test API, độ phủ Lotus Booker 300-400 đại lý/vé 10 tỷ ₫ ngày, ancillary chọn chỗ-hành lý) đã chuyển sang slide Giải pháp phối hợp. -->
 
 <!-- ================= SLIDE 10 — ĐÁNH GIÁ HIỆU QUẢ ================= -->
 <section class="slide" id="s10">
@@ -1013,6 +1013,8 @@ body.printmode .rpath{stroke-dashoffset:0}
       <ul>
         <li>Duy trì TAP / Lotus Booker để mở rộng độ phủ điểm bán</li>
         <li>Đánh giá API Hub cho đại lý lớn, OTA, mô hình B2B / B2B2C</li>
+        <li><b>IT VNA đang test luồng API Hub</b> — khi ổn định sẽ chuyển PVI test tiếp về Premium &amp; Coverage</li>
+        <li>Lotus Booker đã phủ <b>~300–400 đại lý</b> (doanh thu vé ~10 tỷ ₫/ngày), đã có ancillary chọn chỗ / hành lý — <b>sắp tới bổ sung bảo hiểm</b></li>
       </ul>
     </div>
     <div class="card pillar rv" style="--i:4">
