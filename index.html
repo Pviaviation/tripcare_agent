@@ -374,6 +374,19 @@ h1.sl-title{font-family:var(--font-d);font-size:var(--t-title);font-weight:700;l
 .mxname{font-size:15px;font-weight:700;fill:var(--ink)}
 .mxsub{font-size:12px;fill:var(--ink-sub)}
 
+/* ============ S10B hành trình gian nan ============ */
+.hs-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.45rem,1.3vmin,.85rem);flex:1;min-height:0;grid-template-rows:1fr auto}
+.hs-card{grid-column:span 2;background:#fff;border:1px solid var(--line);border-top:4px solid var(--hs,var(--gold-bright));
+  border-radius:14px;padding:clamp(.55rem,1.5vmin,.95rem);display:flex;flex-direction:column;gap:.35rem;
+  min-height:0;overflow-y:auto;box-shadow:0 4px 14px rgba(16,42,80,.06)}
+.hs-card.wide{grid-column:span 3}
+.hs-era{font-family:var(--font-d);font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hs,var(--gold))}
+.hs-card h3{font-family:var(--font-d);font-size:calc(var(--t-small)*.98);line-height:1.32;color:var(--ink);margin-bottom:.1rem}
+.hs-card ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.hs-card li{font-size:calc(var(--t-small)*.84);color:var(--ink-sub);line-height:1.45;padding-left:.85rem;position:relative}
+.hs-card li::before{content:"✕";position:absolute;left:0;top:.2em;color:var(--bad);font-size:.66em;font-weight:800}
+.hs-card li b{color:var(--ink)}
+
 /* ============ S12 pillars ============ */
 .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.7vmin,1.1rem);flex:1;min-height:0;align-content:center}
 .pillar{display:flex;flex-direction:column;gap:.5rem;border-top:4px solid var(--gold-bright);position:relative;overflow:hidden}
@@ -506,13 +519,13 @@ body.printmode .rpath{stroke-dashoffset:0}
         <div class="obj-top"><span class="onum">PHẦN 02</span><span class="oic">🧭</span></div>
         <h3>Phân tích khó khăn, vướng mắc</h3>
         <p class="odesc">Các nhóm khó khăn chính đang cản hiệu quả bán của kênh.</p>
-        <div class="ofoot">Slide 5–9 <span>→</span></div>
+        <div class="ofoot">Slide 5–10 <span>→</span></div>
       </div>
       <div class="card rv" style="--i:3" onclick="goId('s12')">
         <div class="obj-top"><span class="onum">PHẦN 03</span><span class="oic">🛬</span></div>
         <h3>Thống nhất định hướng</h3>
         <p class="odesc">Đề xuất giải pháp cho kênh bán.</p>
-        <div class="ofoot">Slide 10–12 <span>→</span></div>
+        <div class="ofoot">Slide 11–13 <span>→</span></div>
       </div>
     </div>
     <div class="fplan rv" style="--i:4">
@@ -529,13 +542,13 @@ body.printmode .rpath{stroke-dashoffset:0}
           <circle cx="500" cy="65" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="4.6s" repeatCount="indefinite"/></circle>
           <circle class="fp-dot" cx="500" cy="65" r="7" fill="#C99A33"/>
           <text x="500" y="97" text-anchor="middle">02 · Vướng mắc</text>
-          <text class="fp-sub" x="500" y="115" text-anchor="middle">Slide 5–9</text>
+          <text class="fp-sub" x="500" y="115" text-anchor="middle">Slide 5–10</text>
         </g>
         <g class="fp-stop" onclick="goId('s12')">
           <circle cx="914" cy="110" r="13" fill="none" stroke="#C99A33" stroke-opacity=".4"><animate attributeName="r" values="10;17;10" dur="5.2s" repeatCount="indefinite"/></circle>
           <circle class="fp-dot" cx="914" cy="110" r="7" fill="#C99A33"/>
           <text x="914" y="141" text-anchor="middle">03 · Định hướng</text>
-          <text class="fp-sub" x="914" y="159" text-anchor="middle">Slide 10–12</text>
+          <text class="fp-sub" x="914" y="159" text-anchor="middle">Slide 11–13</text>
         </g>
         <g opacity=".95">
           <g>
@@ -885,6 +898,63 @@ body.printmode .rpath{stroke-dashoffset:0}
 </section>
 <!-- NOTES S10: Slide đánh giá hiệu quả các giải pháp PVI và VNA đã phối hợp triển khai. Hai hướng: (1) thúc đẩy bán — thưởng 10% thường xuyên + campaign Chào hè T4-6/2026; (2) mở rộng đại lý & đào tạo — làm việc trực tiếp miền Bắc, thi chứng chỉ (tỷ lệ hạn chế). Kết luận: vướng mắc cốt lõi ở sản phẩm, hoa hồng và quy trình bán. -->
 
+<!-- ================= SLIDE 10B — HÀNH TRÌNH GIAN NAN ================= -->
+<section class="slide" id="s10b">
+  <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">HÀNH TRÌNH DỰ ÁN</span></div>
+  <div class="eyebrow rv" style="--i:0">Nhìn lại hành trình 2019–2026</div>
+  <h1 class="sl-title rv" style="--i:1">Dự án nhiều gian nan — PVI &amp; VNA đã phối hợp thử nhiều mô hình, mô hình nào cũng gặp rào cản</h1>
+  <div class="goldline gline"></div>
+  <div class="hs-grid">
+    <div class="hs-card rv" style="--i:2;--hs:var(--s-blue)">
+      <div class="hs-era">2019–2021 · White Label trên Sabre</div>
+      <h3>Quy trình rời rạc, thanh toán bất tiện — phải đóng lại</h3>
+      <ul>
+        <li>Muốn bán được một đơn bảo hiểm, đại lý phải thao tác trên <b>hai hệ thống tách rời</b>: đặt chỗ và xuất vé trên Sabre DCP xong, phải mở tiếp website VNA và <b>nhập lại toàn bộ thông tin khách</b> (mã đặt chỗ PNR, họ tên, email) lần thứ hai trên trang White Label mới mua được bảo hiểm.</li>
+        <li>Đại lý phải <b>thanh toán bằng thẻ cho từng giao dịch riêng lẻ</b> trên White Label, trong khi nhu cầu thực tế là đối soát theo tháng và cấn trừ vào hoa hồng — hệ thống không đáp ứng được.</li>
+        <li>Kết quả: kênh đại lý <b>không phát sinh doanh thu</b>; năm 2021 White Label phải đóng khi VNA chuyển đổi hệ thống sang Amadeus.</li>
+      </ul>
+    </div>
+    <div class="hs-card rv" style="--i:3;--hs:var(--s-gold)">
+      <div class="hs-era">2024–nay · Amadeus — đầu tư TAP</div>
+      <h3>Đã chi hơn 42.000 USD tích hợp nhưng lệch với cách đại lý vận hành</h3>
+      <ul>
+        <li>PVI đã đầu tư <b>hơn 42.000 USD</b> tích hợp bảo hiểm trên TAP, nhưng các đại lý Top 1 có mạng lưới sub-agent lớn <b>không dùng TAP làm hệ thống bán chính</b>: phần lớn nhập lệnh trên AIDL rồi chỉ qua TAP ở bước thanh toán, hoặc dùng hệ thống đặt vé riêng / web bán thẳng cho khách cuối.</li>
+        <li>Tài khoản TAP <b>không được chia sẻ cho 100% sub-agent</b> → số booker có thể bán bảo hiểm bị giới hạn ngay từ đầu.</li>
+        <li>Bán trên TAP phụ thuộc <b>tư vấn thủ công của booker</b> — thời lượng trao đổi đã dồn hết cho vé và ancillaries, nên bảo hiểm chỉ được nhắc đến khi khách chủ động hỏi.</li>
+        <li>Kết quả sau 7 tháng đầu 2026: chỉ <b>07 đơn / 4,64 triệu ₫</b> trên toàn kênh phòng vé/đại lý.</li>
+      </ul>
+    </div>
+    <div class="hs-card rv" style="--i:4;--hs:var(--s-teal)">
+      <div class="hs-era">Sắp tới · Đầu tư API Hub</div>
+      <h3>Tiếp tục đầu tư, nhưng không phải đại lý nào cũng bán</h3>
+      <ul>
+        <li>SSR bảo hiểm <b>phức tạp hơn mọi SSR khác</b> (hành lý, chọn chỗ…) vì phải kết nối với hệ thống bên ngoài (CRS của Chubb) — VNA và Amadeus vẫn đang xây luồng, chưa có mốc hoàn thành chắc chắn.</li>
+        <li>Chỉ phù hợp với đại lý <b>có hệ thống riêng</b>, và phải <b>thuyết phục kết nối từng đại lý một</b> — không phải đại lý nào cũng đồng ý triển khai bán.</li>
+        <li>Khách của đại lý thường bay <b>nhiều hãng trong một hành trình</b> → đại lý sẽ ưu tiên kết nối API với sản phẩm bảo hiểm dùng chung cho mọi hãng, mọi loại hành trình, thay vì sản phẩm chỉ áp dụng cho vé VNA.</li>
+      </ul>
+    </div>
+    <div class="hs-card wide rv" style="--i:5;--hs:var(--s-coral)">
+      <div class="hs-era">Cơ chế chi trả · Tăng rồi vẫn chưa chạm kỳ vọng</div>
+      <h3>Đại lý kỳ vọng 40–50%, khung hiện tại chỉ cho phép ~27,8%</h3>
+      <ul>
+        <li>PVI đã đề xuất <b>tăng hoa hồng tái từ Chubb 48% → 52%</b> và bỏ transaction fee của Amadeus để dồn tối đa nguồn chi cho đại lý — nhưng theo khung của Bộ Tài chính, đại lý cũng chỉ có thể thực nhận tối đa <b>~27,8%</b>, vẫn cách xa mức 40–50% mà đại lý yêu cầu.</li>
+        <li>Đại lý đang phân phối các sản phẩm BHDL khác với hoa hồng <b>40–50%</b>; muốn trả tới mức này phải cắt từ chi phí kinh doanh hoặc ký hợp đồng dịch vụ riêng — ăn thẳng vào hiệu quả dự án.</li>
+        <li>Đại lý còn phải trích hoa hồng cho tư vấn, bán hàng và chăm sóc khách sau bán → phần thực hưởng thấp hơn nữa, <b>chưa đủ tạo động lực bán</b>.</li>
+      </ul>
+    </div>
+    <div class="hs-card wide rv" style="--i:6;--hs:var(--s-coral)">
+      <div class="hs-era">TripCARE Lite · Cũng chưa phải lời giải trọn vẹn</div>
+      <h3>Vẫn chỉ bán được cho vé của Vietnam Airlines</h3>
+      <ul>
+        <li>Dù phí thấp hơn, quyền lợi cơ bản và mở thêm đa chặng, TripCARE Lite <b>vẫn chỉ áp dụng cho chặng bay của VNA</b> — không bán được cho vé hãng khác, trong khi khách quốc tế đa chặng/đa hãng chiếm tỷ trọng lớn tại nhiều đại lý.</li>
+        <li>Đại lý/OTA sẽ <b>không ưu tiên đầu tư UI/UX API riêng</b> chỉ cho bảo hiểm của một hãng hàng không, do vậy <b>OTA cũng chưa chắc đồng ý đẩy bán trên luồng API online</b> cho khách hàng cuối.</li>
+        <li>Tạo sản phẩm mới còn phát sinh thêm <b>~15.000 EUR</b> chi phí tích hợp trên Amadeus, và Chubb phải tính lại P&amp;L trước khi cam kết.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- NOTES S10B: Slide "kể khổ" theo yêu cầu: 5 khối. (1) White Label/Sabre 2019-2021 — nhập liệu 2 lần, thanh toán thẻ từng giao dịch, không doanh thu, phải đóng. (2) TAP/Amadeus — PVI chi 42.182 USD nhưng đại lý Top 1 không dùng TAP làm hệ thống chính, không chia tài khoản cho sub-agent, bán phụ thuộc booker; 7 tháng chỉ 7 đơn/4,64tr. (3) API Hub — SSR bảo hiểm phức tạp vì dính CRS Chubb, chỉ hợp đại lý có hệ thống riêng, phải thuyết phục từng đại lý, khách đa hãng nên đại lý muốn sản phẩm đa hãng. (4) Cơ chế — tăng HH tái 48→52%, bỏ transaction fee vẫn chỉ tới ~27,8% theo khung BTC, xa mức 40-50% đại lý yêu cầu. (5) TripCARE Lite — vẫn chỉ vé VNA, OTA chưa chắc đẩy bán API online, thêm 15.000 EUR tích hợp. -->
+
 <!-- ================= SLIDE 11 — SẢN PHẨM KỲ VỌNG ================= -->
 <section class="slide" id="s11">
   <div class="brandbar"><span class="bb-vna">VIETNAM AIRLINES</span><span class="bb-x">✕</span><span class="bb-pvi">BẢO HIỂM PVI</span><span class="bb-tag">ĐỊNH HƯỚNG</span></div>
@@ -908,11 +978,12 @@ body.printmode .rpath{stroke-dashoffset:0}
         <g class="mxpt" transform="translate(392,96)">
           <circle r="9" fill="var(--s-coral)"/>
           <text class="mxname" x="0" y="-20" text-anchor="middle">Sản phẩm cạnh tranh</text>
-          <text class="mxsub" x="0" y="28" text-anchor="middle">thao tác dễ · không giới hạn hãng/chặng</text>
+          <text class="mxsub" x="0" y="28" text-anchor="middle">BHDL truyền thống · mọi hãng</text>
         </g>
         <g class="mxpt" transform="translate(360,52)">
           <circle r="10" fill="none" stroke="var(--s-teal)" stroke-width="2.4" stroke-dasharray="4 3"/>
-          <text class="mxname" x="0" y="-18" text-anchor="middle" style="fill:#177A67">TripCARE Lite (kỳ vọng)</text>
+          <text class="mxname" x="0" y="-34" text-anchor="middle" style="fill:#177A67">TripCARE Lite (kỳ vọng)</text>
+          <text class="mxsub" x="0" y="-18" text-anchor="middle" style="fill:#B03D2F">vẫn chỉ áp dụng cho vé VNA</text>
         </g>
         <path d="M172,212 C240,150 295,105 344,68" fill="none" stroke="var(--s-teal)" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#arrLite)"/>
         <defs><marker id="arrLite" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--s-teal)"/></marker></defs>
@@ -923,6 +994,7 @@ body.printmode .rpath{stroke-dashoffset:0}
       <li>Áp dụng cho cả <b>một chiều, khứ hồi và đa chặng</b>, tính phí theo <b>điểm đi – điểm đến</b>.</li>
       <li><b>Thao tác cấp đơn nhanh</b>, phù hợp luồng bán vé của booker và cấp đơn theo đoàn.</li>
       <li>Khảo sát nhu cầu đại lý trước khi thiết kế, đánh giá phạm vi áp dụng phù hợp.</li>
+      <li style="color:#B03D2F"><b style="color:#B03D2F">Giới hạn cần lưu ý:</b> TripCARE Lite <b style="color:#B03D2F">vẫn chỉ bán được cho vé của Vietnam Airlines</b> — không áp dụng cho vé hãng khác, nên đại lý/OTA đa hãng chưa chắc ưu tiên đẩy bán trên luồng API online.</li>
     </ul>
   </div>
 </section>
