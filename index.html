@@ -531,9 +531,10 @@ body.printmode .rpath{stroke-dashoffset:0}
 }
 @media (max-width:900px){
   .slide{overflow-y:auto;overflow-x:hidden;padding:1.2rem 1rem 4rem 1rem;justify-content:flex-start}
-  .body-wrap{justify-content:flex-start}
-  .obj-grid,.kpi-grid,.persona-grid,.pillar-grid,.dec-grid,.gap-diagram,.s5-grid,.hs-grid,.pgrid{grid-template-columns:1fr !important;gap:1.5rem}
-  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols,.s10-wrap,.tl-grid{grid-template-columns:1fr !important;gap:1.5rem}
+  .body-wrap, .body-wrap[style]{justify-content:flex-start !important}
+  .obj-grid,.kpi-grid,.persona-grid,.pillar-grid,.dec-grid,.gap-diagram,.s5-grid,.hs-grid,.pgrid,.s4-layout{grid-template-columns:1fr !important;gap:1.5rem}
+  .mix-grid,.dash-grid,.route-grid,.net-grid,.mx-grid,.ta-cols,.s10-wrap,.tl-grid,div[style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:1.5rem}
+  .obj-grid > *, .kpi-grid > *, .s5-grid > *, .mx-grid > *, .dash-grid > *, .route-grid > *, .net-grid > *, .gap-diagram > *, .tl-grid > *, .pillar-grid > *, .s4-layout > *, div[style*="grid-template-columns"] > *, .mix-grid > *, .hs-grid > *, .pgrid > *, .dec-grid > *, .ta-cols > *, .s10-wrap > * { min-width: 0; }
   .tl-band{display:none}
   .s10-poster img{flex:none;width:100%;max-width:100%;height:auto}
   .s10-poster figcaption{max-width:100%}
